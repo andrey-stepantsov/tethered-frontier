@@ -39,3 +39,12 @@
 
 * **Objects/Tech:** MUST be "Macro Inspection" shots.
     * *Style:* Flash photography, scratched surfaces, dust, grease. The object looks used and broken.
+
+* **Asset Source Control:**
+    * When generating new visuals, ALWAYS save the prompt used to create the image.
+    * Store the prompt at the bottom of the markdown file in an HTML comment:
+        ```
+        NEVER display the prompt text to the reader.
+        ```
+
+
