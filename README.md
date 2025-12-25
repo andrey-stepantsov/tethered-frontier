@@ -12,3 +12,6 @@
 1. `devbox shell` - Initialize environment.
 2. `npx quartz build --serve` - Start local preview (localhost:8080).
 3. `aider` - Start writing (Auto-loads World Bible).
+
+## ⚖️ License
+See [LEGAL.md](LEGAL.md).
