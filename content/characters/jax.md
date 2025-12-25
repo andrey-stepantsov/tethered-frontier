@@ -4,7 +4,7 @@ tags: [character, spider, breaker]
 draft: false
 ---
 
-![[jax-ar.jpg]]
+![[jax-ar.jpeg]]
 *Fig 1. Shift Boss HUD Link. Subject: 899-AX. Note critical O2 warning.*
 
 > **IDENTITY SIGNAL: DETECTED**
