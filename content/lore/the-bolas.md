@@ -28,3 +28,7 @@ The greatest fear in the Belt is **Severance**. If the tether snaps:
 Because a single ship cannot generate gravity alone, "marriage" in the Belt is a physics problem. Two independent clans agree to **Dock**. They link their ships to share stability.
 *   It is a binding contract of mutual survival.
 *   Divorce requires "spinning down," wasting precious fuel. Therefore, marriages are usually for life.
+
+<!--
+PROMPT: Drone feed surveillance footage, fisheye lens, low fidelity, digital noise, monochromatic green tint. Two mismatched, heavily rusted industrial spaceships connected by a thin taut carbon tether cable, spinning in the deep black void of space. The ships are patched with scrap metal, looking like junk. Harsh single-source sunlight creates deep shadows and overexposed highlights. HUD overlays, telemetry data, timestamp "SECTOR 4 - LIVE FEED", scanlines, vignetting. Visceral, industrial sci-fi, realistic.
+-->
