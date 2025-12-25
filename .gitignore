@@ -22,6 +22,24 @@ __pycache__/
 # Note: Keep devbox.lock and devbox.json committed!
 
 # --- Aider (AI Logs) ---
+
+# --- Aider AI ---
+# Ignore all Aider internal files (history, cache, input logs)
+.aider*
+
+# EXCEPT: Do not ignore the configuration file (we want to version this)
+!.aider.conf.yml
+
+.chatlogs/
+
+# Do NOT use .aider* because we want to commit .aider.conf.yml
+.aider.tags.cache.v4/
+.aider.tags.cache.v3
 .aider.chat.history.md
 .aider.input.history
-.aider.tags.cache.v3
+
+# --- Coverage Artifacts ---
+coverage/
+*.dat
+**/*.log
+
