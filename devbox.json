@@ -1,0 +1,14 @@
+{
+  "packages": [
+    "nodejs@22",
+    "python@3.11",
+    "ripgrep",
+    "git",
+    "ffmpeg"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Environment Ready: Node, Python, and FFmpeg loaded.'"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+read:
+  - CONVENTIONS.md
+  - WORLD-BIBLE.md
+
+# Auto-test command: Rebuild the wiki after edits
+test-cmd: "npx quartz build"

@@ -1,11 +1,27 @@
+# --- System & Editors ---
 .DS_Store
-.gitignore
-node_modules
-public
-prof
-tsconfig.tsbuildinfo
-.obsidian
-.quartz-cache
-private/
-.replit
-replit.nix
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# --- Node & Quartz ---
+node_modules/
+public/
+.quartz-cache/
+npm-debug.log*
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# --- Devbox ---
+.devbox/
+# Note: Keep devbox.lock and devbox.json committed!
+
+# --- Aider (AI Logs) ---
+.aider.chat.history.md
+.aider.input.history
+.aider.tags.cache.v3
