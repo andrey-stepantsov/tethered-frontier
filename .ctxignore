@@ -1,0 +1,41 @@
+# --- Engine Internals ---
+# We don't need the source code of the static site generator
+quartz/
+node_modules/
+.quartz-cache/
+public/
+
+# --- Noise & Data ---
+# Lockfiles waste tokens (unless debugging build issues)
+package-lock.json
+yarn.lock
+devbox.lock
+pnpm-lock.yaml
+
+# Large data maps
+quartz/util/emojimap.json
+
+# --- Optional: Keep specific styles if you want ---
+# If you want to keep custom styles but ignore the rest of quartz/, 
+# you'd need to ignore 'quartz/*' instead of 'quartz/', then unignore:
+# !quartz/styles/custom.scss
+
+.venv/
+docs/
+.github/
+.ctxignore
+.gitattributes
+.gitignore
+.node-version
+.npmrc
+.prettierignore
+.prettierrc
+Dockerfile
+LICENSE.txt
+devbox.json
+globals.d.ts
+index.d.ts
+package.json
+quartz.config.ts
+quartz.layout.ts
+tsconfig.json
