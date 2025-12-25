@@ -29,9 +29,10 @@ The image is grainy, washed in the amber monochrome of low-light security camera
 *   **BIO-METRICS:** HR: 95 BPM (Elevated) // CORTISOL: HIGH
 *   **ALERT:** O2 SCRUBBER EFFICIENCY < 85%
 
-## Image Generation Prompt
+<!-- AI PROMPT
 > **Style:** CCTV surveillance footage, low-fidelity, amber monochrome, heavy film grain, scanlines, digital artifacts, VHS distortion.
 > **Subject:** A tired middle-aged woman (Sarah Vance) sitting in a grimy industrial spaceship command chair. She has messy graying hair and wears a bulky, worn flight suit with patches. She is rubbing her face with one hand in exhaustion.
 > **Lighting:** Harsh overhead industrial lighting, deep shadows, high contrast.
 > **Overlays:** Digital HUD elements in amber text: "REC", "CAM-04", "HR: 95", scrolling data streams on the left.
 > **Angle:** High-angle security camera shot looking down at her.
+-->
