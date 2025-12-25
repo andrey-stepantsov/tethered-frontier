@@ -4,6 +4,9 @@ tags: [lore, physics]
 draft: false
 ---
 
+![[bolas-drone-view.jpeg]]
+*Fig 1. Drone Telemetry. Clan Habitat Spin-up. Note tether tension.*
+
 # The Bolas: Gravity by Necessity
 
 **"Spin or die. Those are the options."**
