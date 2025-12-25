@@ -37,3 +37,31 @@ Jax had to improvise a structural splint before the stress of the spin caused a 
 3.  **The Hack:** To cure the mastic instantly, he hacked the safety limiters on his laser cutter, turning it into a high-intensity UV lamp.
 
 He wrapped the fracture in the scrap metal, glued it shut, and baked it hard. It’s an ugly, lumpy scar on the sleek black cable, but it holds the ships together.
+
+<!--
+Generate a photorealistic First-Person POV shot from inside a dirty, scratched spacesuit helmet.
+
+The Scene: We are looking at a mechanic ('Jax') standing in a dark, rusted corridor. He is gaunt, pale, wearing a greasy flight suit, and looks exhausted. He is glaring at the viewer.
+
+The Augmented Reality Overlay:
+
+Superimpose a glowing, low-fidelity Holographic UI over his face.
+
+
+
+Style: Cyan/Green monochrome, wireframe aesthetics, retro-futuristic (think Alien motion tracker meets Terminator vision).
+
+Glitch: The UI should be distorted—scanlines, dead pixels, and 'tracking error' artifacts to show the tech is cheap and broken.
+
+Text Elements (Floating near his head):
+
+ID: 899-AX
+
+CLASS: SPIDER
+
+DEBT: CRITICAL
+
+O2 RESERVES: 12%
+
+Lighting: The only light comes from the glowing UI casting a faint green tint on Jax's face and the sparks from a wire he is holding.
+-->
