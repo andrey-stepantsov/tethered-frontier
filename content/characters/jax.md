@@ -4,6 +4,14 @@ tags: [character, spider, breaker]
 draft: false
 ---
 
+![[jax-ar.jpg]]
+*Fig 1. Shift Boss HUD Link. Subject: 899-AX. Note critical O2 warning.*
+
+> **IDENTITY SIGNAL: DETECTED**
+> **ID:** 899-AX
+> **CLASS:** SPIDER (AUGMENTED)
+> **DEBT:** CRITICAL
+
 # Jax: The Four-Handed Mechanic
 
 **" legs are just dead weight. You can't fix a thruster valve with your toes."**
