@@ -33,5 +33,27 @@ The surgery is performed in Zero-G clinics, often using recycled prosthetics and
 *   **Benefit:** Direct interface with ship sensors. Reaction times measured in milliseconds.
 *   **Side Effects:** Dissociation from physical reality. High addiction rates to digital stimuli.
 
+### Class IV: Stills (Metabolic Optimization)
+*   **Role:** Long-haul survival, diplomacy, command.
+*   **Modification:** Internal restructuring only. Digestive system replaced with a liquid-nutrient loop (no solid waste). Lungs replaced with high-efficiency oxygen scrubbers. Blood replaced with rad-resistant synthetic hemolymph.
+*   **Visual:** Externally identical to a 'Standard' human, except for extreme pallor and the absence of a navel (replaced by a nutrient port).
+*   **Benefit:** 50% less oxygen consumption. Can hibernate for weeks.
+
 ## Social Stigma
 In the Belt, an unaugmented adult is viewed with suspicion. They are called **"Dead Weight"** or **"Tourists."** To refuse The Strip is to refuse to work, and in the [[The Bolas|Bolas]], if you don't work, you don't breathe.
+
+## Medical Schematics
+![[blueprint-spider.jpeg]]
+![[blueprint-tank.jpeg]]
+![[blueprint-jack.jpeg]]
+![[blueprint-still.jpeg]]
+
+<!--
+PROMPT_SPIDER: Diegetic medical monitor screen, glowing cyan wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Spider" variant. Legs amputated at the knee, replaced with mechanical prehensile hand manipulators. Inner ear removed. Text labels "CLASS I: SPIDER", "AMPUTATION COMPLETE", "MANIPULATOR INTEGRITY 100%". Scanlines, screen burn-in, low fidelity.
+
+PROMPT_TANK: Diegetic medical monitor screen, glowing green wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Tank" variant. Dense skeletal structure, subdermal mesh layer highlighted. Thickened bones, metallic skin texture indicated in wireframe. Text labels "CLASS II: TANK", "OSTE-CERAMIC LACE", "RAD-SHIELDING ACTIVE". Scanlines, screen burn-in, low fidelity.
+
+PROMPT_JACK: Diegetic medical monitor screen, glowing amber wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Jack" variant. Spinal column highlighted with neural shunt implants. Atrophied limb muscles shown as thin/weak. Brain interface nodes visible. Text labels "CLASS III: JACK", "NEURAL SHUNT", "MUSCLE MASS CRITICAL". Scanlines, screen burn-in, low fidelity.
+
+PROMPT_STILL: Diegetic medical monitor screen, glowing blue wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Still" variant. Internal organs highlighted: synthetic digestive loop, artificial lung scrubbers. Navel replaced by mechanical port. Text labels "CLASS IV: STILL", "METABOLIC LOOP", "O2 SCRUBBER". Scanlines, screen burn-in, low fidelity.
+-->
