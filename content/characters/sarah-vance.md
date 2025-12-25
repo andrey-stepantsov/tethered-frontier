@@ -4,6 +4,14 @@ tags: [character, anchor]
 draft: false
 ---
 
+![[sarah-vance-cctv.jpeg]]
+*Fig 1. Bridge Security Feed [CAM-04]. Subject: VANCE-S-992.*
+
+> **IDENTITY SIGNAL: DETECTED**
+> **ID:** VANCE-S-992
+> **BIO-METRICS:** HR: 95 BPM (Elevated) // CORTISOL: HIGH
+> **ALERT:** O2 SCRUBBER EFFICIENCY < 85%
+
 # Sarah Vance
 
 > "Gravity is a luxury. Loyalty is a law."
