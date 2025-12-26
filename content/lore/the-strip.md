@@ -41,7 +41,7 @@ The surgery is performed in Zero-G clinics, often using recycled prosthetics and
 *   **Benefit:** 50% less oxygen consumption. Can hibernate for weeks.
 
 ## Social Stigma
-In the Belt, an unaugmented adult is viewed with suspicion. They are called **"Dead Weight"** or **"Tourists."** To refuse The Strip is to refuse to work, and in the [[The Bolas|Bolas]], if you don't work, you don't breathe.
+In the Belt, an unaugmented adult is viewed with suspicion. They are called **"Dead Weight"** or **"Tourists."** To refuse The Strip is to refuse to work, and in the [[the-bolas|Bolas]], if you don't work, you don't breathe.
 
 ## Medical Schematics
 ![[blueprint-spider.jpeg]]

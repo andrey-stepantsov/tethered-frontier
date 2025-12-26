@@ -10,7 +10,7 @@ draft: false
 
 **"The air tastes like sweat and copper. Just the way we like it."**
 
-**The Iron Lung** is a notorious [[The Bolas|Bolas]]-configuration vessel, serving as a primary trade hub for independent clans. It is formed from two retrofitted heavy freighters, *The Systole* and *The Diastole*, connected by a fraying carbon tether.
+**The Iron Lung** is a notorious [[the-bolas|Bolas]]-configuration vessel, serving as a primary trade hub for independent clans. It is formed from two retrofitted heavy freighters, *The Systole* and *The Diastole*, connected by a fraying carbon tether.
 
 ## Atmosphere
 The interior is defined by its failing life support systems.
