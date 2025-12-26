@@ -2,7 +2,14 @@ import os
 import re
 import sys
 
-CONTENT_DIR = 'content'
+# Determine the absolute path to the 'content' directory
+# Assumes structure:
+#   project_root/
+#     scripts/check_links.py
+#     content/
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+CONTENT_DIR = os.path.join(PROJECT_ROOT, 'content')
 
 def build_index(root_dir):
     """
