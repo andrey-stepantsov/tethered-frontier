@@ -11,6 +11,14 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 CONTENT_DIR = os.path.join(PROJECT_ROOT, 'content')
 
+def quartz_slugify(text):
+    """
+    Mimics basic Quartz slugification:
+    - Lowercase
+    - Replace spaces with hyphens
+    """
+    return text.lower().replace(' ', '-')
+
 def build_index(root_dir):
     """
     Scans the root_dir recursively.
@@ -90,7 +98,8 @@ def check_content(root_dir, valid_targets):
                     continue
                 
                 # 4. Check validity
-                if target.lower() not in valid_targets:
+                # Check exact match (lowercase) OR slugified match
+                if (target.lower() not in valid_targets) and (quartz_slugify(target) not in valid_targets):
                     broken_links.append((file_path, target))
                     
     return broken_links
