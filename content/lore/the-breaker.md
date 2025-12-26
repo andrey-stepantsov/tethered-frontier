@@ -1,29 +1,27 @@
 ---
 title: The Breaker
 tags: [lore, archetype]
-aliases: ["the-breaker"]
 draft: false
 ---
 
-# The Breaker: Right to Repair
+# ARCHETYPE: THE BREAKER
 
-**"If you can't open it, you don't own it. And if you don't own it, it will kill you."**
+**"If you can't open it, you don't own it. If you don't own it, it will kill you."**
 
-The **Breaker** is a specialized hacker-mechanic essential to every Clan's survival. In the [[the-bolas|Bolas]], corporate machinery is designed with "Planned Obsolescence" and Digital Rights Management (DRM) that locks out users after the lease expires.
+### The Job
+A **Breaker** is a specialized mechanic and hacker essential to every clan's survival. Their primary function is to bypass the Digital Rights Management (DRM) software embedded in corporate technology.
 
-Since the corporations abandoned the Belt, these locks are now death sentences. The Breaker's job is to "jailbreak" life support systems, air scrubbers, and water recyclers.
+Earth corporations build life-support systems with "Planned Obsolescence"—air scrubbers designed to shut down after 5 years unless a license is renewed. Since Belters cannot afford to pay Earth for the right to breathe, Breakers hack the firmware.
 
-## The Philosophy
-For a Breaker, **Right to Repair** is not a political stance; it is a religion.
-*   **Software Locks:** Viewed as active threats to life.
-*   **Proprietary Tech:** Sinful.
-*   **Open Source:** The only path to salvation.
+### The Culture
+Breakers view software locks as acts of aggression. "Right to Repair" is not a political stance; it is a religious tenant.
+*   **Tools:** Custom firmware decks, soldering irons, and illegal decryption keys.
+*   **Status:** Breakers are protected. You can kill a rival clan's Tank in a bar fight, but if you kill their Breaker, the entire station will turn on you. Nobody messes with the person who keeps the air pumps running.
 
-## Tools of the Trade
-*   **Bypass Chips:** Homemade circuit boards to override corporate auth.
-*   **Legacy Code:** Knowledge of 100-year-old coding languages (C++, Rust, Assembly) found in the ancient ship cores.
-*   **The Deck:** A wrist-mounted computer, often hardwired into the Breaker's nervous system (if they are a [[the-strip|Jack]]).
+### Famous Breakers
+*   **Jax:** A legendary Breaker known for cracking the "Vanguard-7" water reclamation encryption, saving the Ceres slums during the Drought of '89.
 
 <!--
-PROMPT: Surveillance footage, macro lens. A pair of grease-stained hands soldering a microchip onto a rusted circuit board. The board is glowing with bypass LEDs. In the background, a wall of monitors displays scrolling green code and "ACCESS GRANTED" warnings. The workspace is cluttered with wires, tools, and empty caffeine bulbs. High contrast, cyberpunk aesthetic, green and amber lighting.
+NEVER display the prompt text to the reader.
+Image Prompt: First-person POV (looking at hands). Dirty, grease-stained hands holding a soldering iron to a complex circuit board. Sparks flying. A holographic HUD overlay displays "WARNING: WARRANTY VOID" in red text. Background is a cluttered, dark workshop.
 -->
