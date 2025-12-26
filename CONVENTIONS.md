@@ -16,8 +16,12 @@
     ```
 
 ## 3. FILE MANAGEMENT
-* **Characters:** content/characters/[lastname_firstname].md
-* **Locations:** content/locations/[sector_name].md
+* **General Rule:** ALWAYS use **kebab-case** (lowercase, hyphens for spaces) for all filenames.
+    * *Bad:* `The Mirrors.md`, `Sarah_Vance.md`
+    * *Good:* `the-mirrors.md`, `sarah-vance.md`
+* **Characters:** content/characters/[firstname-lastname].md
+* **Locations:** content/locations/[sector-name].md
+* **Lore:** content/lore/[concept-name].md
 * **Stories:** content/stories/[title].md
 
 ## 4. WORLD LOGIC
@@ -46,5 +50,3 @@
         ```
         NEVER display the prompt text to the reader.
         ```
-
-
