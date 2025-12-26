@@ -10,7 +10,7 @@ draft: false
 
 If you are reading this, you have drifted past the Mars perimeter. You are now in the domain of **Poverty Physics**. Forget the shiny chrome of Earth's propaganda. Out here, we don't have artificial gravity or infinite energy. We have what we could salvage, what we could steal, and what we could hack.
 
-We live in the **Used Car Economy**. Every ship in this sector is a fifty-year-old corporate castoff, bought for scrap prices during the Rust Recession. We keep the air scrubbers running with bypassed DRM and duct tape. We catch sunlight with fragile Mylar [[The Mirrors|Mirrors]] because uranium is a luxury we can't afford.
+We live in the **Used Car Economy**. Every ship in this sector is a fifty-year-old corporate castoff, bought for scrap prices during the Rust Recession. We keep the air scrubbers running with bypassed DRM and duct tape. We catch sunlight with fragile Mylar [[the-mirrors|Mirrors]] because uranium is a luxury we can't afford.
 
 ### The Rules of the Tether
 

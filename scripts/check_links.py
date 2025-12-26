@@ -13,11 +13,20 @@ CONTENT_DIR = os.path.join(PROJECT_ROOT, 'content')
 
 def quartz_slugify(text):
     """
-    Mimics basic Quartz slugification:
-    - Lowercase
-    - Replace spaces with hyphens
+    Mimics Quartz slugification logic to match [[Wiki Links]] to kebab-case filenames.
     """
-    return text.lower().replace(' ', '-')
+    # 1. Remove special chars that Quartz likely strips or encodes
+    # This is a simplified version. Quartz uses a more complex slugifier.
+    # We want to turn "The Mirrors?" into "the-mirrors"
+    
+    # Remove invalid chars
+    text = text.replace('?', '').replace('#', '').replace('%', '')
+    
+    # Replace spaces with hyphens
+    text = text.replace(' ', '-')
+    
+    # Lowercase
+    return text.lower()
 
 def build_index(root_dir):
     """
