@@ -10,7 +10,7 @@ draft: false
 
 If you are reading this, you have drifted past the Mars perimeter. You are now in the domain of **Poverty Physics**. Forget the shiny chrome of Earth's propaganda. Out here, we don't have artificial gravity or infinite energy. We have what we could salvage, what we could steal, and what we could hack.
 
-![[sector-nav-chart.jpeg]]
+![[index-nav-chart.jpeg]]
 *Fig 1. Nav-Computer Dump. The "Lawless Zones" begin at the 20-minute light-lag perimeter.*
 
 ### 1. The Geography of Isolation
@@ -32,7 +32,7 @@ We live in the wreckage of the "Rust Recession." Every ship in this sector is a 
 
 > **The Rule:** In the Belt, a liter of water costs more than an hour of your life.
 
-![[market-ticker-glitch.jpeg]]
+![[index-public-ticker.jpeg]]
 *Fig 2. Public Trading Terminal. Note the inflation on O2 scrubbers.*
 
 ### 3. The Rules of the Tether
