@@ -10,28 +10,46 @@ draft: false
 
 If you are reading this, you have drifted past the Mars perimeter. You are now in the domain of **Poverty Physics**. Forget the shiny chrome of Earth's propaganda. Out here, we don't have artificial gravity or infinite energy. We have what we could salvage, what we could steal, and what we could hack.
 
-We live in the **Used Car Economy**. Every ship in this sector is a fifty-year-old corporate castoff, bought for scrap prices during the Rust Recession. We keep the air scrubbers running with bypassed DRM and duct tape. We catch sunlight with fragile Mylar [[the-mirrors|Mirrors]] because uranium is a luxury we can't afford.
+![[sector-nav-chart.jpeg]]
+*Fig 1. Nav-Computer Dump. The "Lawless Zones" begin at the 20-minute light-lag perimeter.*
 
-### The Rules of the Tether
+### 1. The Geography of Isolation
+Space is not measured in distance; it is measured in **Lag**.
+*   **The Inner Ring (<10m Lag):** Corporate patrolled. If you scream, they might hear you.
+*   **The Fringe (>20m Lag):** The "Wild West." By the time your distress signal reaches Earth, you've been dead for an hour. This is where we live.
+*   **The Dark:** Beyond the belt. No signal. No survival.
 
-1.  **Gravity is a Contract:** We live in [[the-bolas|The Bolas]]. Two ships, connected by a kilometer of carbon cable, spinning in the dark. That spin is the only thing keeping your bones from dissolving. If the cable snaps—**Severance**—gravity vanishes, and your family drifts apart. Literally.
-2.  **Flesh is Weak:** You will see things here that horrify Earthers. Our children, the **Spin-Rats**, are raised in the gravity wells, soft and protected. But to work the void, we undergo [[the-strip|The Strip]]. We trade legs for hands. We trade lungs for synthetics. We stop being human so we can start being free.
-3.  **Incompetence is Death:** There is no police force. There is only the **Airlock Filter**. If you waste water, if you endanger the ship, if you break the seal... the vacuum does not negotiate.
+### 2. The Used Car Economy
+We live in the wreckage of the "Rust Recession." Every ship in this sector is a fifty-year-old corporate castoff. We keep the air scrubbers running with bypassed DRM and duct tape.
 
-This database is not a history book. It is a survival manual. Learn the difference between a [[tanks|Tank]] and a [[spiders|Spider]]. Understand why [[docking|Docking]] is a marriage contract. Respect the [[the-breaker|Breakers]] who keep the oxygen flowing.
+**Current Market Rates (Iron Lung Exchange):**
+| Commodity | Status | Price Trend |
+| :--- | :--- | :--- |
+| **Water (Ice)** | SCARCE | 📈 +15% |
+| **Uranium** | EMBARGOED | 🔒 EARTH ONLY |
+| **Mylar (Mirrors)** | COMMON | 📉 -5% |
+| **Human Labor** | SURPLUS | 📉 -40% |
 
-### The Geography of Scarcity
+> **The Rule:** In the Belt, a liter of water costs more than an hour of your life.
 
-The solar system is defined by who holds the keys to survival. We call this dynamic **The Leash**.
+![[market-ticker-glitch.jpeg]]
+*Fig 2. Public Trading Terminal. Note the inflation on O2 scrubbers.*
 
-*   **Earth Holds:** Uranium (Energy), Microchips (Compute), and Biologics (Soil/Seeds). They starve us to keep us obedient.
-*   **The Belt Holds:** Metals, Ice, and **The High Ground**. We sit at the top of the gravity well. If they cut the food shipments, we drop rocks. It is a cold war of physics.
-*   **The Goal:** Autarky. We are fighting to manufacture our own chips and medicine to break The Leash.
+### 3. The Rules of the Tether
+1.  **Gravity is a Contract:** We live in [[the-bolas|The Bolas]]. Two ships, connected by a kilometer of carbon cable, spinning in the dark. That spin is the only thing keeping your bones from dissolving.
+2.  **Flesh is Weak:** You will see things here that horrify Earthers. Our children, the **Spin-Rats**, are raised in the gravity wells. But to work the void, we undergo [[the-strip|The Strip]]. We trade legs for hands.
+3.  **Incompetence is Death:** There is no police force. There is only the **Airlock Filter**.
 
-### Anatomy of the Rust Belt
-
-*   **The Fleet:** There are no new ships. We fly the "Rust Recession" fleet—depreciated haulers sold to us by Earth corporations 50 years ago. They are held together by patches and prayer.
-*   **The Rocks:** Those who can't afford ships live in hollowed-out asteroids. These are spun up for gravity, but the rock is often unstable. A "Dust-Out" occurs when the centrifugal force tears the asteroid apart from the inside.
-*   **The Tech:** We rely on **Poverty Physics**. High-tech solutions break. We use mechanical levers, analog backups, and massive, fragile Mylar mirrors to concentrate weak sunlight for heating ice.
+### Survival Database
+This database is not a history book. It is a survival manual.
+*   **Who to Trust:** Understand the difference between a [[tanks|Tank]] (Miner) and a [[spiders|Spider]] (Tech).
+*   **How to Live:** Why [[docking|Docking]] is a marriage contract based on physics.
+*   **How to Breathe:** Respect the [[the-breaker|Breakers]] who hack the air scrubbers.
 
 **Welcome to the Frontier. Check your seals.**
+
+<!--
+PROMPT_NAV_CHART: Diegetic screen capture of a retro-futuristic navigational console. Vector graphics, green lines on black background. Solar system map focusing on the Asteroid Belt. Concentric rings labeled "LIGHT LAG: 10m", "LIGHT LAG: 20m". The screen is cracked and dusty. Low fidelity, CRT scanlines.
+
+PROMPT_TICKER: Close up macro shot of a dirty, scratched LCD screen in a public hallway. Scrolling amber text displaying commodity prices. "WATER: CRITICAL", "URANIUM: NO STOCK". The screen has dead pixels and is covered in a layer of grime. Harsh industrial lighting reflection.
+-->
