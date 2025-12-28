@@ -7,7 +7,8 @@ import generate_visual_stub
 CONTENT_DIR = "content"
 ASSETS_DIR = os.path.join(CONTENT_DIR, "assets", "images")
 MARKER = "NEVER display the prompt text to the reader."
-SUPPORTED_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp"]
+# STRICT PNG ENFORCEMENT
+SUPPORTED_EXTENSIONS = [".png"]
 
 def clean_prompt_text(raw_text):
     """
@@ -22,46 +23,32 @@ def clean_prompt_text(raw_text):
 def get_target_filename(content, filename):
     """
     Determines the target image filename.
-    Priority 1: 'TARGET: filename' inside comments.
-    Priority 2: First Wikilink '![[filename]]'.
-    Priority 3: Derive from markdown filename (e.g. page.md -> page.png).
+    ALWAYS forces .png extension.
     """
+    base_name = ""
+
     # 1. Check for explicit TARGET:
     target_match = re.search(r"TARGET:\s*([\w\-\.]+)", content, re.IGNORECASE)
     if target_match:
-        name = target_match.group(1).strip()
-        # Append extension if missing (default to png for generation)
-        if not os.path.splitext(name)[1]:
-            name += ".png"
-        return name
-
+        raw_name = target_match.group(1).strip()
+        base_name = os.path.splitext(raw_name)[0]
+    
     # 2. Check for existing Wikilink
-    link_match = re.search(r"!\[\[(.*?)\]\]", content)
-    if link_match:
-        return link_match.group(1).strip()
+    elif (link_match := re.search(r"!\[\[(.*?)\]\]", content)):
+        raw_name = link_match.group(1).strip()
+        base_name = os.path.splitext(raw_name)[0]
 
-    # 3. Fallback
-    return filename.replace(".md", ".png")
+    # 3. Fallback to markdown filename
+    else:
+        base_name = os.path.splitext(filename)[0]
+
+    return f"{base_name}.png"
 
 def image_exists(filename):
     """
-    Checks if the image exists, regardless of extension if the target
-    might have been flexible, or checks specific file if extension provided.
+    Checks if the image exists in the assets directory.
     """
-    base_name, ext = os.path.splitext(filename)
-    
-    # If the target file exists exactly as named, return True
-    if os.path.exists(os.path.join(ASSETS_DIR, filename)):
-        return True
-        
-    # If the target file doesn't exist, check if a sibling with a different extension exists
-    # (e.g., target is 'image.png', but 'image.jpeg' exists)
-    for ext in SUPPORTED_EXTENSIONS:
-        candidate = base_name + ext
-        if os.path.exists(os.path.join(ASSETS_DIR, candidate)):
-            return True
-            
-    return False
+    return os.path.exists(os.path.join(ASSETS_DIR, filename))
 
 def find_and_generate(full_auto=False, dry_run=False):
     print(f"[-] Scanning '{CONTENT_DIR}' for missing visuals...")
@@ -96,11 +83,11 @@ def find_and_generate(full_auto=False, dry_run=False):
             
             # 1. Extract the Prompt
             # Looks for "PROMPT:" or "Image Prompt:" followed by text until the closing comment or marker
-            # We use a non-greedy match for the content
             prompt_match = re.search(r"(?:Image\s+)?PROMPT:\s*(.*?)(?:-->|NEVER)", content, re.DOTALL | re.IGNORECASE)
             
             if not prompt_match:
-                print(f"[!] Marker found but no PROMPT section in: {file}")
+                # Only warn if we found the marker but missed the prompt regex (rare edge case)
+                # print(f"[!] Marker found but no PROMPT section in: {file}")
                 continue
             
             raw_prompt = prompt_match.group(1)
@@ -110,11 +97,11 @@ def find_and_generate(full_auto=False, dry_run=False):
                 print(f"[!] Empty prompt found in: {file}")
                 continue
 
-            # 2. Determine Target Filename
+            # 2. Determine Target Filename (Forces .png)
             target_filename = get_target_filename(content, file)
             image_path = os.path.join(ASSETS_DIR, target_filename)
             
-            # 3. Check if Asset Exists (Smart Check)
+            # 3. Check if Asset Exists
             if image_exists(target_filename):
                 continue
             
@@ -134,6 +121,7 @@ def find_and_generate(full_auto=False, dry_run=False):
                     print("    [Skipped]")
                     continue
 
+            # Call the generation stub
             success = generate_visual_stub.generate_image(clean_prompt, image_path)
             
             if success:
