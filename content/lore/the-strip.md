@@ -51,7 +51,7 @@ In the Belt, an unaugmented adult is viewed with suspicion. They are called **"D
 
 <!--
 TARGET: blueprint-spider
-PROMPT: Diegetic medical monitor screen, glowing cyan wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Spider" variant. Legs amputated at the knee, replaced with mechanical prehensile hand manipulators. Inner ear removed. Text labels "CLASS I: SPIDER", "AMPUTATION COMPLETE", "MANIPULATOR INTEGRITY 100%". Scanlines, screen burn-in, low fidelity.
+PROMPT: Diegetic medical monitor screen, glowing cyan wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Spider" variant. Legs amputated at the knee, replaced with mechanical prehensile hand manipulators. Hands are normal. Inner ear dampened. Text labels "CLASS I: SPIDER", "AMPUTATION COMPLETE", "MANIPULATOR INTEGRITY 100%". Scanlines, screen burn-in, low fidelity.
 
 NEVER display the prompt text to the reader.
 -->

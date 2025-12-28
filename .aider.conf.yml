@@ -5,6 +5,7 @@ weak-model: gemini/gemini-2.5-flash
 read:
   - CONVENTIONS.md
   - WORLD-BIBLE.md
+  - TECH-BIBLE.md
 
 # Auto-test command: Rebuild the wiki after edits
 test-cmd: "npx quartz build"
