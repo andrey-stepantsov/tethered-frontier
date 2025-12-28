@@ -42,15 +42,21 @@ def get_target_filename(content, filename):
     # 3. Fallback
     return filename.replace(".md", ".png")
 
-def find_and_generate(full_auto=False):
+def find_and_generate(full_auto=False, dry_run=False):
     print(f"[-] Scanning '{CONTENT_DIR}' for missing visuals...")
-    if full_auto:
+    
+    if dry_run:
+        print("[-] Mode: DRY RUN (No images will be generated)")
+    elif full_auto:
         print("[-] Mode: FULL AUTO (No confirmation required)")
     else:
         print("[-] Mode: INTERACTIVE (Use --auto to skip confirmations)")
     
     if not os.path.exists(ASSETS_DIR):
-        os.makedirs(ASSETS_DIR)
+        if dry_run:
+            print(f"    [Dry Run] Would create directory: {ASSETS_DIR}")
+        else:
+            os.makedirs(ASSETS_DIR)
 
     generated_count = 0
     
@@ -96,6 +102,11 @@ def find_and_generate(full_auto=False):
             print(f"    Target: {target_filename}")
             print(f"    Prompt: {clean_prompt[:60]}...")
             
+            if dry_run:
+                print("    [Dry Run] Would generate image now.")
+                generated_count += 1
+                continue
+
             if not full_auto:
                 confirm = input("    Generate this image? [y/N] ").strip().lower()
                 if confirm != 'y':
@@ -110,11 +121,18 @@ def find_and_generate(full_auto=False):
             else:
                 print(f"    ❌ Generation failed.")
 
-    print(f"\n[-] Scan complete. Generated {generated_count} new images.")
+    if dry_run:
+        print(f"\n[-] Dry run complete. Would have generated {generated_count} new images.")
+    else:
+        print(f"\n[-] Scan complete. Generated {generated_count} new images.")
 
 if __name__ == "__main__":
     full_auto_mode = False
+    dry_run_mode = False
+    
     if "--auto" in sys.argv:
         full_auto_mode = True
+    if "--dry-run" in sys.argv:
+        dry_run_mode = True
     
-    find_and_generate(full_auto=full_auto_mode)
+    find_and_generate(full_auto=full_auto_mode, dry_run=dry_run_mode)
