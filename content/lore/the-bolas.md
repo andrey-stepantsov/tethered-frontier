@@ -20,7 +20,7 @@ A standard Bolas formation consists of two masses—usually two scavenged ships,
 Once connected, the pair uses thrusters to initiate a spin. The centrifugal force generates pseudo-gravity.
 *   **0.3G:** The minimum for long-term survival.
 *   **0.5G:** The luxury standard (rare).
-*   **[[The Hub]]:** The center of the cable is Zero-G. This is where the [[Spin-Rats]] (children) play, but it is dangerous territory for unaugmented adults due to the Coriolis effect.
+*   **[[The Hub]]:** The center of the cable is Zero-G. While [[Spin-Rats]] (children) are raised in the gravity well to ensure bone growth, they use the Hub for supervised zero-g training. It is dangerous territory for unaugmented adults due to the Coriolis effect.
 
 ## Severance
 The greatest fear in the Belt is [[Severance]]. If the tether snaps:
