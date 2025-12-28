@@ -45,9 +45,13 @@ Everything is repurposed. Nothing is sleek.
     * *Shielding:* "Ice-Jackets"—a 1-meter gap between the inner and outer hull filled with non-potable water or sewage ice to block radiation.
     * *Aesthetic:* Patchwork metal, varying degrees of rust, painted with clan sigils.
 * **Bolas Tethers ("The Umbilical"):**
-    * *Material:* Braided carbon-nanotube fibers scavenged from space elevator counterweights.
+    * *Material:* **Basalt Fiber.** Spun from melted asteroid rock. Heavy, gritty, and fireproof.
     * *Safety:* "Deadman Cutters"—explosive bolts at both ends to sever the cable instantly if the counter-weight ship suffers a catastrophic imbalance.
     * *Maintenance:* Walked daily by "Spiders" looking for micro-fractures.
+* **Basalt Weave ("Stone-Skin"):**
+    * *Textiles:* Cargo straps, hammocks, and pressure suit outer layers made from woven rock fiber.
+    * *Properties:* Immune to radiation and abrasion, but stiff and itchy.
+    * *Insulation:* "Rock-Wool" batting used to line ship interiors, keeping heat in and noise out.
 * **Energy Generators ("The Trash-Burner"):**
     * *Type:* Radioisotope Thermoelectric Generator (RTG) Array.
     * *Source:* A cluster of 20-30 individual RTGs strapped together, salvaged from centuries of defunct deep-space probes.
