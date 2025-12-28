@@ -83,9 +83,8 @@ def create_page(category, title):
             success = generate_visual_stub.generate_image(prompt, image_path)
             
             if success:
-                # Relative path from content/category/file.md to content/assets/images/image.png
-                # content/characters/file.md -> ../assets/images/image.png
-                image_markdown = f"![[../assets/images/{image_filename}]]\n\n"
+                # Quartz prefers just the filename for Wikilinks
+                image_markdown = f"![[{image_filename}]]\n\n"
                 prompt_comment = f"\n<!--\nNEVER display the prompt text to the reader.\nPROMPT: {prompt}\n-->"
             else:
                 print("[!] Skipping image inclusion due to generation failure.")
@@ -95,7 +94,7 @@ title: {title}
 tags:
   - {tag}
 aliases: ["{title}"]
-draft: true
+draft: false
 ---
 
 # {title}
