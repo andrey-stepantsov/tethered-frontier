@@ -55,3 +55,15 @@ Everything is repurposed. Nothing is sleek.
     * *Construction:* Hexagonal segments of aluminized Kapton film, stitched together with conductive thread.
     * *Rigging:* Tensioned by a spiderweb of monofilament lines attached to a central spar.
     * *Repair:* "Quilting"—holes from micrometeoroids are patched with adhesive foil, giving the mirror a distinct checkered look.
+* **EVA Suits ("The Husk"):**
+    * *Shell:* Hard-torso composite scavenged from industrial reactor shielding. It does not bend.
+    * *Visibility:* No glass visors (too fragile). The helmet is a solid metal dome with multiple redundant cameras feeding internal screens.
+    * *Life Support:* "The Rebreather"—a bulky backpack unit that scrubs CO2 and recycles moisture. It hums loudly, vibrating the wearer's spine.
+* **Boarding Pods ("The Tick"):**
+    * *Propulsion:* Cold-gas nitrogen thrusters (to avoid melting the target ship's hull).
+    * *Docking:* No standard airlock rings. It uses three hydraulic "Mandibles" to crush-grip the target hull, then a plasma cutter breaches the seal.
+    * *Capacity:* 4 heavily armed Belters in a space the size of a closet.
+* **Data Cartridges ("The Brick"):**
+    * *Form Factor:* A solid-state drive encased in a 2kg block of lead and shock-absorbing rubber.
+    * *Interface:* Chunky, gold-plated physical pins. No wireless capability.
+    * *Durability:* Designed to survive a ship explosion or atmospheric reentry. Used to physically courier data between ships.
