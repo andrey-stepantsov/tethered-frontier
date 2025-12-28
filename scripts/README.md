@@ -101,11 +101,3 @@ Queries the Google Gemini API to list available models. Useful for debugging API
   ```bash
   python3 scripts/list_models.py
   ```
-
-### 7. Cleanup Lore (`cleanup_lore.py`)
-A utility script used to migrate files from Title Case to kebab-case.
-
-* **Usage:**
-  ```bash
-  python3 scripts/cleanup_lore.py
-  ```
