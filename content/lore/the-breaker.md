@@ -1,6 +1,7 @@
 ---
 title: The Breaker
 tags: [lore, archetype]
+aliases: ["The Breaker"]
 draft: false
 ---
 
