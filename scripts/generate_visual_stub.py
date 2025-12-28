@@ -1,7 +1,7 @@
 import os
 import sys
-import google.generativeai as genai
-from PIL import Image
+import requests
+import base64
 
 # --- CONFIGURATION ---
 # In the real script, these would be dynamic based on the file tags.
@@ -26,47 +26,69 @@ def main():
         print("Error: GEMINI_API_KEY not found in environment variables.")
         sys.exit(1)
 
-    print(f"[*] Authenticating with Google AI...")
-    genai.configure(api_key=api_key)
+    print(f"[*] Authenticating with Google AI (REST API)...")
 
-    # 2. Initialize Model (Using Imagen 3)
-    # Note: Model names may vary by region/access. Common: 'imagen-3.0-generate-001'
-    try:
-        model = genai.ImageGenerationModel("imagen-3.0-generate-001")
-    except AttributeError:
-        # Fallback or specific error if the SDK version is older
-        print("Error: Could not initialize ImageGenerationModel. Ensure google-generativeai is up to date.")
-        sys.exit(1)
+    # 2. Prepare Request
+    # Using the REST API directly to avoid SDK version/deprecation issues.
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-001:predict?key={api_key}"
+    
+    headers = {
+        "Content-Type": "application/json"
+    }
+    
+    # Construct payload for Imagen 3
+    payload = {
+        "instances": [
+            {
+                "prompt": STATIC_PROMPT
+            }
+        ],
+        "parameters": {
+            "sampleCount": 1,
+            "aspectRatio": "16:9"
+        }
+    }
 
     # 3. Generate Content
     print(f"[*] Generating visual with prompt:\n    \"{STATIC_PROMPT}\"")
     
     try:
-        response = model.generate_images(
-            prompt=STATIC_PROMPT,
-            number_of_images=1,
-            aspect_ratio="16:9", 
-            safety_filter_level="block_only_high",
-            person_generation="allow_adult", 
-        )
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
         
-        if response.images:
-            image = response.images[0]
+        result = response.json()
+        
+        # 4. Process Response
+        if "predictions" in result and result["predictions"]:
+            # The API returns base64 encoded image in 'bytesBase64Encoded'
+            prediction = result["predictions"][0]
+            b64_image = prediction.get("bytesBase64Encoded")
             
-            # 4. Save Output
-            output_path = os.path.join("content", "assets", OUTPUT_FILENAME)
-            
-            # Ensure directory exists
-            os.makedirs(os.path.dirname(output_path), exist_ok=True)
-            
-            image.save(output_path)
-            print(f"[+] Success! Image saved to: {output_path}")
-            print(f"[!] Remember to add the prompt to your markdown file as a comment (per CONVENTIONS.md).")
+            if b64_image:
+                image_data = base64.b64decode(b64_image)
+                
+                # 5. Save Output
+                output_path = os.path.join("content", "assets", OUTPUT_FILENAME)
+                
+                # Ensure directory exists
+                os.makedirs(os.path.dirname(output_path), exist_ok=True)
+                
+                with open(output_path, "wb") as f:
+                    f.write(image_data)
+                    
+                print(f"[+] Success! Image saved to: {output_path}")
+                print(f"[!] Remember to add the prompt to your markdown file as a comment (per CONVENTIONS.md).")
+            else:
+                print("[-] API returned predictions but no image data found.")
         else:
-            print("[-] API returned no images.")
+            print(f"[-] API returned no images. Response: {result}")
 
+    except requests.exceptions.RequestException as e:
+        print(f"[-] Request failed: {e}")
+        if hasattr(e, 'response') and e.response is not None:
+            print(f"    Details: {e.response.text}")
     except Exception as e:
-        print(f"[-] Generation failed: {e}")
+        print(f"[-] An error occurred: {e}")
 
 if __name__ == "__main__":
     main()
