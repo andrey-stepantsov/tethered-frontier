@@ -9,14 +9,17 @@ CONTENT_DIR = os.path.join(PROJECT_ROOT, 'content')
 
 def quartz_slugify(text):
     """
-    Mimics Quartz slugification logic to match [[Wiki Links]] to kebab-case filenames.
+    Mimics Quartz slugification logic (github-slugger).
+    1. Lowercase
+    2. Replace spaces with hyphens
+    3. Remove non-alphanumeric chars (except - and _)
     """
-    # Remove invalid chars
-    text = text.replace('?', '').replace('#', '').replace('%', '')
-    # Replace spaces with hyphens
+    text = text.lower()
     text = text.replace(' ', '-')
-    # Lowercase
-    return text.lower()
+    # Remove characters that are not alphanumeric, hyphen, or underscore
+    # This is a simplified approximation of github-slugger
+    text = re.sub(r'[^a-z0-9\-_]', '', text)
+    return text
 
 def is_draft(file_path):
     """
@@ -24,23 +27,28 @@ def is_draft(file_path):
     Handles:
       draft: true
       draft: "true"
-      draft: 'true'
+      Indented keys
+      Leading whitespace/BOM
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
+        
+        # Handle BOM or leading whitespace before '---'
+        content = content.lstrip()
             
         if content.startswith('---'):
             parts = content.split('---', 2)
             if len(parts) >= 3:
                 frontmatter = parts[1]
                 # Regex explanation:
-                # ^draft:       Start of line, key 'draft:'
+                # ^\s*          Start of line, optional whitespace (indentation)
+                # draft:        Key 'draft:'
                 # \s*           Optional whitespace
                 # ["']?         Optional quote
                 # true          Literal 'true' (case insensitive via flag)
                 # ["']?         Optional quote
-                if re.search(r'^draft:\s*["\']?true["\']?', frontmatter, re.MULTILINE | re.IGNORECASE):
+                if re.search(r'^\s*draft:\s*["\']?true["\']?', frontmatter, re.MULTILINE | re.IGNORECASE):
                     return True
     except Exception:
         pass
