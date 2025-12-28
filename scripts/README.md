@@ -47,11 +47,24 @@ Handles the connection to the Google Imagen API to generate diegetic "surveillan
   * Model: `imagen-4.0-generate-001`
   * Output: `content/assets/images/`
 
+### 3. Generate Missing Visuals (`generate_missing_visuals.py`)
+Batch processor that scans existing content for defined prompts that lack corresponding image files.
+
+* **Usage:**
+  ```bash
+  python3 scripts/generate_missing_visuals.py
+  ```
+* **Logic:**
+  * Scans for the `NEVER display the prompt` marker.
+  * Extracts the prompt text from the HTML comment.
+  * Identifies the target filename (checking `TARGET:` tags, then Wikilinks, then filename).
+  * Generates the image if it does not exist in `content/assets/images/`.
+
 ---
 
 ## Maintenance & Auditing
 
-### 3. Check Links (`check_links.py`)
+### 4. Check Links (`check_links.py`)
 Scans all Markdown files in `content/` to ensure every Wikilink `[[Link]]` points to a valid file or anchor.
 
 * **Usage:**
@@ -63,7 +76,7 @@ Scans all Markdown files in `content/` to ensure every Wikilink `[[Link]]` point
   * Ignores files marked `draft: true`.
   * Reports broken links with file paths.
 
-### 4. Audit Visual Assets (`audit_visuals.py`)
+### 5. Audit Visual Assets (`audit_visuals.py`)
 A comprehensive check of the relationship between Markdown files and Image assets.
 
 * **Usage:**
@@ -78,7 +91,7 @@ A comprehensive check of the relationship between Markdown files and Image asset
     * **Missing Target:** Prompt block exists, but no `TARGET:` defined.
     * **Duplicate Targets:** Multiple files claiming the same image.
 
-### 5. Find Missing Visuals (`find_missing_visuals.py`)
+### 6. Find Missing Visuals (`find_missing_visuals.py`)
 A lighter scanner that specifically looks for files containing the "Prompt Marker" but lacking an actual image link.
 
 * **Usage:**
@@ -94,7 +107,7 @@ A lighter scanner that specifically looks for files containing the "Prompt Marke
 
 ## Utilities
 
-### 6. List Models (`list_models.py`)
+### 7. List Models (`list_models.py`)
 Queries the Google Gemini API to list available models. Useful for debugging API access or checking for new model versions.
 
 * **Usage:**

@@ -10,8 +10,9 @@
 
 ## 🚀 Quick Start
 1. `devbox shell` - Initialize environment.
-2. `npx quartz build --serve` - Start local preview (localhost:8080).
-3. `aider` - Start writing (Auto-loads World Bible).
+2. `python3 scripts/generate_missing_visuals.py` - Generate missing assets (Requires `GEMINI_API_KEY`).
+3. `npx quartz build --serve` - Start local preview (localhost:8080).
+4. `aider` - Start writing (Auto-loads World Bible).
 
 ## ⚖️ License
 See [LEGAL.md](LEGAL.md).
