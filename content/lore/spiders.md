@@ -5,6 +5,8 @@ aliases: ["Spiders"]
 draft: false
 ---
 
+![[spiders-medical-scan.png]]
+
 # BIOLOGICAL DIVERGENCE: CLASS "SPIDER"
 
 **"Legs are a luxury tax on oxygen."** — *Common Belter Adage*

@@ -5,6 +5,8 @@ aliases: ["Tanks"]
 draft: false
 ---
 
+![[tanks-security-feed.png]]
+
 # BIOLOGICAL DIVERGENCE: CLASS "TANK"
 
 **"The rock doesn't care if you bleed. So don't."**

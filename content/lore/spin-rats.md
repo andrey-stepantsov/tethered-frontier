@@ -4,6 +4,8 @@ tags: [lore, biology, sociology]
 draft: false
 ---
 
+![[spin-rats-nursery.png]]
+
 # BIOLOGICAL STAGE: SPIN-RATS
 
 **"Soft bones, full hearts. They are the only future we have."**

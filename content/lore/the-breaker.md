@@ -5,6 +5,8 @@ aliases: ["The Breaker"]
 draft: false
 ---
 
+![[the-breaker-pov.png]]
+
 # ARCHETYPE: THE BREAKER
 
 **"If you can't open it, you don't own it. If you don't own it, it will kill you."**

@@ -5,6 +5,8 @@ aliases: ["Docking"]
 draft: false
 ---
 
+![[docking-tether.png]]
+
 # SOCIOLOGICAL PROTOCOL: DOCKING
 
 **"Love is physics. Stability is survival."**

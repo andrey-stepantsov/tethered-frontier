@@ -5,6 +5,8 @@ aliases: ["The Mirrors"]
 draft: false
 ---
 
+![[mirrors-macro.png]]
+
 # The Mirrors
 
 In the **Tethered Frontier**, uranium is strictly hoarded by Earth ("The Leash"). Denied high-density fuel, Belter clans rely on "Poverty Physics" to survive the freezing void.
