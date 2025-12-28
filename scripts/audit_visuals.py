@@ -3,7 +3,7 @@ import re
 
 # Configuration
 CONTENT_ROOT = "content"
-CATEGORIES = ["", "characters", "locations", "lore"]
+CATEGORIES = ["", "characters", "locations", "lore", "stories"]
 # Updated to only accept PNG as valid
 VALID_EXTENSIONS = {".png"}
 
