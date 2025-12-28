@@ -1,6 +1,7 @@
 ---
 title: The Tethered Frontier
 tags: [lore, index]
+aliases: ["The Tethered Frontier"]
 draft: false
 ---
 

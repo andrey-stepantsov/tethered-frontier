@@ -1,6 +1,7 @@
 ---
 title: Jax
 tags: [character, spider, breaker]
+aliases: ["Jax"]
 draft: false
 ---
 
@@ -20,7 +21,7 @@ Jax is a classic **Spider**, a Belter who underwent [[The Strip]] at age 18 to a
 
 ## Physiology: The Spider
 Jax is a testament to biological pragmatism.
-*   **Lower Modification:** His legs were amputated at the knee. In their place, a second set of cybernetic forearms and hands were grafted. This allows him to anchor himself to hull struts while working with his "upper" hands.
+*   **Lower Modification:** His legs were amputated at the knee. In their place, a second set of cybernetic forearms and hands were grafted. This allows him to anchor to hull struts while working with his "upper" hands.
 *   **Vestibular System:** His inner ear has been surgically dampened to eliminate motion sickness, allowing him to orient in any direction without nausea.
 *   **Atrophy:** Because he rarely enters the gravity wells of [[The Bolas]], his bone density is minimal. On Earth, he would collapse under his own weight. Here, he is an acrobat.
 

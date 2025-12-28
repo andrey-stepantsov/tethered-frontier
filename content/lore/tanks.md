@@ -1,6 +1,7 @@
 ---
 title: Tanks
 tags: [lore, biology]
+aliases: ["Tanks"]
 draft: false
 ---
 

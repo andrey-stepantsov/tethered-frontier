@@ -1,6 +1,7 @@
 ---
 title: The Bolas
 tags: [lore, physics]
+aliases: ["The Bolas"]
 draft: false
 ---
 

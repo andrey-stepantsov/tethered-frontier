@@ -1,6 +1,7 @@
 ---
 title: Sarah Vance
 tags: [character, anchor]
+aliases: ["Sarah Vance"]
 draft: false
 ---
 

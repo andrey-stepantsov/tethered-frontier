@@ -1,6 +1,7 @@
 ---
 title: Spiders
 tags: [lore, biology]
+aliases: ["Spiders"]
 draft: false
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Docking
 tags: [lore, sociology]
+aliases: ["Docking"]
 draft: false
 ---
 

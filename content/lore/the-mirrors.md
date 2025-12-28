@@ -1,7 +1,7 @@
 ---
 title: The Mirrors
 tags: [lore, tech, energy]
-aliases: ["the-mirrors"]
+aliases: ["The Mirrors"]
 draft: false
 ---
 

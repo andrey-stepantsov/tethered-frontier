@@ -6,11 +6,12 @@
 
 ## 2. FORMATTING RULES (STRICT)
 * **WikiLinks:** ALWAYS link key terms using double brackets. Example: [[The Tether]].
-* **Frontmatter:** All files in content/ must start with YAML:
+* **Frontmatter:** All files in content/ must start with YAML. **Always include an alias matching the Title.**
     ```yaml
     ---
     title: [Title]
     tags: [character, location, lore]
+    aliases: [Title]
     draft: false
     ---
     ```

@@ -1,7 +1,7 @@
 ---
 title: The Strip
 tags: [lore, biology, augmentation]
-aliases: ["the-strip"]
+aliases: ["The Strip"]
 draft: false
 ---
 
