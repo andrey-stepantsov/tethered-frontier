@@ -46,9 +46,9 @@ def check_file(filepath, existing_images):
             break
             
     if found:
-        return "OK", target_name
+        return "OK", base_name
     else:
-        return "PENDING", target_name
+        return "PENDING", base_name
 
 def main():
     print(f"--- VISUAL ASSET AUDIT ---")
@@ -62,6 +62,11 @@ def main():
     missing_blocks = []
     missing_targets = []
     pending_generation = []
+    duplicate_targets = []
+    
+    # Track seen targets to ensure uniqueness: {target_base_name: first_filename}
+    seen_targets = {}
+    
     complete = 0
 
     # Scan content files
@@ -75,18 +80,35 @@ def main():
                 continue
 
             filepath = os.path.join(dir_path, filename)
-            status, target = check_file(filepath, existing_images)
+            status, target_base = check_file(filepath, existing_images)
 
-            if status == "OK":
-                complete += 1
-            elif status == "PENDING":
-                pending_generation.append((filename, target))
+            if status in ["OK", "PENDING"]:
+                # Check for duplicates
+                if target_base in seen_targets:
+                    original_file = seen_targets[target_base]
+                    duplicate_targets.append((filename, target_base, original_file))
+                    # Do not count as complete or pending if duplicate
+                    continue
+                
+                seen_targets[target_base] = filename
+
+                if status == "OK":
+                    complete += 1
+                elif status == "PENDING":
+                    pending_generation.append((filename, target_base))
+            
             elif status == "MISSING_TARGET":
                 missing_targets.append(filename)
             elif status == "MISSING_BLOCK":
                 missing_blocks.append(filename)
 
     # Report
+    if duplicate_targets:
+        print(f"\n[DUPLICATE TARGETS] ({len(duplicate_targets)})")
+        print("Multiple files claim the same image target:")
+        for fname, target, original in duplicate_targets:
+            print(f"  - {fname} claims '{target}' (already claimed by {original})")
+
     if pending_generation:
         print(f"\n[PENDING GENERATION] ({len(pending_generation)})")
         print("Prompts exist, but images are missing:")
@@ -107,7 +129,7 @@ def main():
 
     print("-" * 30)
     print(f"TOTAL COMPLETE: {complete}")
-    print(f"TOTAL ACTIONABLE: {len(pending_generation) + len(missing_targets) + len(missing_blocks)}")
+    print(f"TOTAL ACTIONABLE: {len(pending_generation) + len(missing_targets) + len(missing_blocks) + len(duplicate_targets)}")
 
 if __name__ == "__main__":
     main()
