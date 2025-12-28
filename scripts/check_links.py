@@ -28,6 +28,25 @@ def quartz_slugify(text):
     # Lowercase
     return text.lower()
 
+def is_draft(file_path):
+    """
+    Checks if a markdown file has 'draft: true' in its frontmatter.
+    """
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+            
+        if content.startswith('---'):
+            parts = content.split('---', 2)
+            if len(parts) >= 3:
+                frontmatter = parts[1]
+                # Check for draft: true (flexible spacing, case insensitive)
+                if re.search(r'^draft:\s*true', frontmatter, re.MULTILINE | re.IGNORECASE):
+                    return True
+    except Exception:
+        pass
+    return False
+
 def build_index(root_dir):
     """
     Scans the root_dir recursively.
@@ -37,13 +56,20 @@ def build_index(root_dir):
     - filename without extension (e.g., 'note')
     - relative path (e.g., 'folder/note.md')
     - relative path without extension (e.g., 'folder/note')
+    
+    Excludes files marked as 'draft: true'.
     """
     valid_targets = set()
     
     for dirpath, _, filenames in os.walk(root_dir):
         for f in filenames:
-            # Full path relative to content root
             full_path = os.path.join(dirpath, f)
+            
+            # Skip drafts for .md files
+            if f.endswith('.md') and is_draft(full_path):
+                continue
+
+            # Full path relative to content root
             rel_path = os.path.relpath(full_path, root_dir)
             
             # Normalize inputs
@@ -74,8 +100,8 @@ def check_content(root_dir, valid_targets):
     """
     broken_links = []
     # Regex to capture [[Target]] or [[Target|Alias]]
-    # Non-greedy match for content inside brackets
-    link_pattern = re.compile(r'\[\[(.*?)\]\]')
+    # DOTALL allows matching across newlines if accidentally wrapped
+    link_pattern = re.compile(r'\[\[(.*?)\]\]', re.DOTALL)
     
     for dirpath, _, filenames in os.walk(root_dir):
         for f in filenames:
@@ -83,6 +109,10 @@ def check_content(root_dir, valid_targets):
                 continue
             
             file_path = os.path.join(dirpath, f)
+            
+            # Skip checking links INSIDE draft files? 
+            # Optional: currently we check links inside drafts, 
+            # but we don't allow linking TO drafts.
             
             try:
                 with open(file_path, 'r', encoding='utf-8') as file:
@@ -99,7 +129,7 @@ def check_content(root_dir, valid_targets):
                 # 2. Handle Anchor: [[Target#Section]] -> Target
                 target = target.split('#')[0]
                 
-                # 3. Clean whitespace
+                # 3. Clean whitespace and newlines
                 target = target.strip()
                 
                 # Skip empty targets (e.g. [[#anchor]] links to self, or empty [[]])
