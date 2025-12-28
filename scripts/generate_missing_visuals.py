@@ -95,9 +95,9 @@ def find_and_generate(full_auto=False, dry_run=False):
                 continue
             
             # 1. Extract the Prompt
-            # Looks for "PROMPT:" followed by text until the closing comment or marker
+            # Looks for "PROMPT:" or "Image Prompt:" followed by text until the closing comment or marker
             # We use a non-greedy match for the content
-            prompt_match = re.search(r"PROMPT:(.*?)(?:-->|NEVER)", content, re.DOTALL)
+            prompt_match = re.search(r"(?:Image\s+)?PROMPT:\s*(.*?)(?:-->|NEVER)", content, re.DOTALL | re.IGNORECASE)
             
             if not prompt_match:
                 print(f"[!] Marker found but no PROMPT section in: {file}")
