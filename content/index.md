@@ -34,7 +34,7 @@ We live in the wreckage of the "Rust Recession." Every ship in this sector is a 
 
 > **The Rule:** In the Belt, a liter of water costs more than an hour of your life.
 
-![[index-public-ticker.jpeg]]
+![[index-public-ticker.png]]
 *Fig 2. Public Trading Terminal. Note the inflation on O2 scrubbers.*
 
 ### 3. The Rules of the Tether

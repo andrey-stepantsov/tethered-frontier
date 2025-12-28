@@ -45,9 +45,9 @@ In the Belt, an unaugmented adult is viewed with suspicion. They are called **"D
 
 ## Medical Schematics
 ![[blueprint-spider.png]]
-![[blueprint-tank.jpeg]]
-![[blueprint-jack.jpeg]]
-![[blueprint-still.jpeg]]
+![[blueprint-tank.png]]
+![[blueprint-jack.png]]
+![[blueprint-still.png]]
 
 <!--
 TARGET: blueprint-spider
