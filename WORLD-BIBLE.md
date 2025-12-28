@@ -36,7 +36,7 @@ To resolve the conflict between Health (needs gravity) and Labor (needs Zero-G),
 ## SECTION V: CONFLICT & ECONOMICS
 * **Earth vs. Belt:**
     * *Earth Holds:* Uranium, Microchips, Biologics (Soil/Seeds).
-    * *The Belt Holds:* Metals, Ice, **Basalt Fiber (Structural Fabric)**, The High Ground (Kinetic Bombardment threat).
+    * *The Belt Holds:* Metals, Ice, **Basalt Fiber (Structural Fabric)**, **Algae Lipids (Fuel/Hydraulics)**, The High Ground (Kinetic Bombardment threat).
 * **The Goal:** Autarky. The Belt is fighting to manufacture its own chips and medicine to break "The Leash" of Earth.
 
 ## SECTION VI: CHARACTER ARCHETYPES
