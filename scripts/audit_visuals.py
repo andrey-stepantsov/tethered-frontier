@@ -4,7 +4,8 @@ import re
 # Configuration
 CONTENT_ROOT = "content"
 CATEGORIES = ["", "characters", "locations", "lore"]
-VALID_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
+# Updated to only accept PNG as valid
+VALID_EXTENSIONS = {".png"}
 
 # Regex to find the TARGET line inside the HTML comment
 # Matches: TARGET: filename (with optional whitespace)

@@ -6,7 +6,8 @@ import sys
 CONTENT_DIR = "content"
 ASSETS_DIR = os.path.join(CONTENT_DIR, "assets", "images")
 MARKER = "NEVER display the prompt text to the reader."
-SUPPORTED_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp"]
+# Only support PNG now
+SUPPORTED_EXTENSIONS = [".png"]
 
 def get_target_basename(content, filename):
     """
@@ -34,12 +35,14 @@ def find_existing_image(basename):
             return candidate
     return None
 
-def has_image_link(content):
+def get_existing_link(content):
     """
-    Checks if the content already contains a wikilink to an image.
-    Matches ![[...]]
+    Returns the filename inside the first image wikilink found, or None.
     """
-    return re.search(r"!\[\[.*?\]\]", content) is not None
+    match = re.search(r"!\[\[(.*?)(?:\|.*?)?\]\]", content)
+    if match:
+        return match.group(1)
+    return None
 
 def inject_link(filepath, image_filename):
     """
@@ -74,8 +77,30 @@ def inject_link(filepath, image_filename):
     with open(filepath, "w", encoding="utf-8") as f:
         f.writelines(lines)
 
+def update_link(filepath, content, old_link_name, new_link_name):
+    """
+    Replaces the old link filename with the new one, preserving alt text if present.
+    """
+    # Regex for the full tag: ![[old_link_name(|alt)]]
+    tag_pattern = re.compile(r"!\[\[" + re.escape(old_link_name) + r"(?:\|.*?)?\]\]")
+    
+    def replacer(match):
+        full_match = match.group(0)
+        if "|" in full_match:
+            # extract alt text. full_match ends with ]]
+            # split gives ['![[filename', 'alt]]']
+            alt = full_match.split("|", 1)[1][:-2]
+            return f"![[{new_link_name}|{alt}]]"
+        else:
+            return f"![[{new_link_name}]]"
+
+    new_content = tag_pattern.sub(replacer, content, count=1)
+    
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(new_content)
+
 def main(dry_run=False):
-    print(f"[-] Scanning '{CONTENT_DIR}' for unlinked visuals...")
+    print(f"[-] Scanning '{CONTENT_DIR}' for visual integration...")
     if dry_run:
         print("[-] Mode: DRY RUN (No files will be modified)")
 
@@ -94,31 +119,47 @@ def main(dry_run=False):
             if MARKER not in content:
                 continue
 
-            # Check if link already exists
-            if has_image_link(content):
-                continue
-
             basename = get_target_basename(content, file)
-
-            # Find the actual image file
-            image_filename = find_existing_image(basename)
             
-            if not image_filename:
-                print(f"[!] Image missing for: {file} (Expected base: {basename})")
-                continue
+            # We only care about PNGs now
+            png_filename = basename + ".png"
+            png_exists = os.path.exists(os.path.join(ASSETS_DIR, png_filename))
 
-            print(f"[+] Linking visual in: {file}")
-            print(f"    Image: {image_filename}")
+            existing_link_name = get_existing_link(content)
 
-            if not dry_run:
-                inject_link(filepath, image_filename)
-                print("    ✅ Link injected.")
+            if existing_link_name:
+                # Link exists. Check if it needs updating.
+                _, ext = os.path.splitext(existing_link_name)
+                if ext.lower() != ".png":
+                    if png_exists:
+                        print(f"[~] Updating extension in: {file}")
+                        print(f"    {existing_link_name} -> {png_filename}")
+                        if not dry_run:
+                            update_link(filepath, content, existing_link_name, png_filename)
+                            print("    ✅ Updated.")
+                        else:
+                            print("    [Dry Run] Would update.")
+                        linked_count += 1
+                    else:
+                        print(f"[!] Found non-PNG link '{existing_link_name}' in {file}, but '{png_filename}' does not exist.")
+                else:
+                    # It is already PNG.
+                    pass
             else:
-                print("    [Dry Run] Would inject link.")
-            
-            linked_count += 1
+                # No link exists. Inject if PNG exists.
+                if png_exists:
+                    print(f"[+] Linking visual in: {file}")
+                    print(f"    Image: {png_filename}")
+                    if not dry_run:
+                        inject_link(filepath, png_filename)
+                        print("    ✅ Link injected.")
+                    else:
+                        print("    [Dry Run] Would inject link.")
+                    linked_count += 1
+                else:
+                    print(f"[!] Image missing for: {file} (Expected: {png_filename})")
 
-    print(f"\n[-] Complete. Integrated {linked_count} visuals.")
+    print(f"\n[-] Complete. Processed {linked_count} updates/injections.")
 
 if __name__ == "__main__":
     dry_run_mode = "--dry-run" in sys.argv
