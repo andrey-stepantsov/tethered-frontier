@@ -23,6 +23,7 @@ Breakers view software locks as acts of aggression. "Right to Repair" is not a p
 *   **Jax:** A legendary Breaker known for cracking the "Vanguard-7" water reclamation encryption, saving the Ceres slums during the Drought of '89.
 
 <!--
+TARGET: the-breaker-pov
 NEVER display the prompt text to the reader.
 Image Prompt: First-person POV (looking at hands). Dirty, grease-stained hands holding a soldering iron to a complex circuit board. Sparks flying. A holographic HUD overlay displays "WARNING: WARRANTY VOID" in red text. Background is a cluttered, dark workshop.
 -->

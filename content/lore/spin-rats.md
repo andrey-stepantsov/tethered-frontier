@@ -27,6 +27,7 @@ Being a Spin-Rat is temporary. At age 18, every Belter undergoes **The Ascension
 Once a Spin-Rat undergoes The Strip, they can never return to Earth. They belong to the void.
 
 <!--
+TARGET: spin-rats-nursery
 NEVER display the prompt text to the reader.
 Image Prompt: Security camera feed, high angle. A group of children in oversized, dirty jumpsuits playing with a ball in a narrow, curved corridor. The floor is metal grating. Amber emergency lighting. HUD overlay: "SECTOR: HIGH-G NURSERY. COUNT: 4."
 -->

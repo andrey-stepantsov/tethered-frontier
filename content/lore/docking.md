@@ -25,6 +25,7 @@ A Docking contract is negotiated by the Clan Elders. It specifies:
 In the Belt, you don't say "I do." You say "We are stable."
 
 <!--
+TARGET: docking-tether
 NEVER display the prompt text to the reader.
 Image Prompt: Drone feed, deep space background. Two rusty, patched-up spaceships connected by a long, thin cable. The ships are blurred slightly to indicate spin. Starfield is sparse. Digital artifacts and grain overlay.
 -->
