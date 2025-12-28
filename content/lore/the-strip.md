@@ -51,13 +51,28 @@ In the Belt, an unaugmented adult is viewed with suspicion. They are called **"D
 
 <!--
 TARGET: blueprint-spider
-PROMPT_SPIDER: Diegetic medical monitor screen, glowing cyan wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Spider" variant. Legs amputated at the knee, replaced with mechanical prehensile hand manipulators. Inner ear removed. Text labels "CLASS I: SPIDER", "AMPUTATION COMPLETE", "MANIPULATOR INTEGRITY 100%". Scanlines, screen burn-in, low fidelity.
+PROMPT: Diegetic medical monitor screen, glowing cyan wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Spider" variant. Legs amputated at the knee, replaced with mechanical prehensile hand manipulators. Inner ear removed. Text labels "CLASS I: SPIDER", "AMPUTATION COMPLETE", "MANIPULATOR INTEGRITY 100%". Scanlines, screen burn-in, low fidelity.
 
-PROMPT_TANK: Diegetic medical monitor screen, glowing green wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Tank" variant. Dense skeletal structure, subdermal mesh layer highlighted. Thickened bones, metallic skin texture indicated in wireframe. Text labels "CLASS II: TANK", "OSTE-CERAMIC LACE", "RAD-SHIELDING ACTIVE". Scanlines, screen burn-in, low fidelity.
+NEVER display the prompt text to the reader.
+-->
 
-PROMPT_JACK: Diegetic medical monitor screen, glowing amber wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Jack" variant. Spinal column highlighted with neural shunt implants. Atrophied limb muscles shown as thin/weak. Brain interface nodes visible. Text labels "CLASS III: JACK", "NEURAL SHUNT", "MUSCLE MASS CRITICAL". Scanlines, screen burn-in, low fidelity.
+<!--
+TARGET: blueprint-tank
+PROMPT: Diegetic medical monitor screen, glowing green wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Tank" variant. Dense skeletal structure, subdermal mesh layer highlighted. Thickened bones, metallic skin texture indicated in wireframe. Text labels "CLASS II: TANK", "OSTE-CERAMIC LACE", "RAD-SHIELDING ACTIVE". Scanlines, screen burn-in, low fidelity.
 
-PROMPT_STILL: Diegetic medical monitor screen, glowing blue wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Still" variant. Internal organs highlighted: synthetic digestive loop, artificial lung scrubbers. Navel replaced by mechanical port. Text labels "CLASS IV: STILL", "METABOLIC LOOP", "O2 SCRUBBER". Scanlines, screen burn-in, low fidelity.
+NEVER display the prompt text to the reader.
+-->
+
+<!--
+TARGET: blueprint-jack
+PROMPT: Diegetic medical monitor screen, glowing amber wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Jack" variant. Spinal column highlighted with neural shunt implants. Atrophied limb muscles shown as thin/weak. Brain interface nodes visible. Text labels "CLASS III: JACK", "NEURAL SHUNT", "MUSCLE MASS CRITICAL". Scanlines, screen burn-in, low fidelity.
+
+NEVER display the prompt text to the reader.
+-->
+
+<!--
+TARGET: blueprint-still
+PROMPT: Diegetic medical monitor screen, glowing blue wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Still" variant. Internal organs highlighted: synthetic digestive loop, artificial lung scrubbers. Navel replaced by mechanical port. Text labels "CLASS IV: STILL", "METABOLIC LOOP", "O2 SCRUBBER". Scanlines, screen burn-in, low fidelity.
 
 NEVER display the prompt text to the reader.
 -->

@@ -21,34 +21,47 @@ def get_all_images(root_dir):
     return images
 
 def check_file(filepath, existing_images):
+    """
+    Scans a file for visual asset targets.
+    Returns a list of (status, target_base_name) tuples.
+    """
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # 1. Check if the file has the "NEVER display" comment block
-    if "NEVER display the prompt text" not in content:
-        return "MISSING_BLOCK", None
+    # 1. Check if the file has the "NEVER display" comment block (global check)
+    has_safety = "NEVER display the prompt text" in content
 
-    # 2. Extract the TARGET filename
-    match = TARGET_PATTERN.search(content)
-    if not match:
-        return "MISSING_TARGET", None
-
-    target_name = match.group(1).strip()
+    # 2. Find all TARGETs
+    matches = list(TARGET_PATTERN.finditer(content))
     
-    # Strip extension if the user included it in the target (e.g. "vance.png" -> "vance")
-    base_name, _ = os.path.splitext(target_name)
+    # If no targets found
+    if not matches:
+        if not has_safety:
+            return [("MISSING_BLOCK", None)]
+        else:
+            return [("MISSING_TARGET", None)]
 
-    # 3. Check if any image with this base name exists
-    found = False
-    for ext in VALID_EXTENSIONS:
-        if f"{base_name}{ext}" in existing_images:
-            found = True
-            break
+    # If targets found, but safety text is missing entirely
+    if not has_safety:
+        return [("MISSING_BLOCK", None)]
+
+    results = []
+    for match in matches:
+        target_name = match.group(1).strip()
+        base_name, _ = os.path.splitext(target_name)
+        
+        found = False
+        for ext in VALID_EXTENSIONS:
+            if f"{base_name}{ext}" in existing_images:
+                found = True
+                break
+        
+        if found:
+            results.append(("OK", base_name))
+        else:
+            results.append(("PENDING", base_name))
             
-    if found:
-        return "OK", base_name
-    else:
-        return "PENDING", base_name
+    return results
 
 def main():
     print(f"--- VISUAL ASSET AUDIT ---")
@@ -80,27 +93,28 @@ def main():
                 continue
 
             filepath = os.path.join(dir_path, filename)
-            status, target_base = check_file(filepath, existing_images)
+            file_results = check_file(filepath, existing_images)
 
-            if status in ["OK", "PENDING"]:
-                # Check for duplicates
-                if target_base in seen_targets:
-                    original_file = seen_targets[target_base]
-                    duplicate_targets.append((filename, target_base, original_file))
-                    # Do not count as complete or pending if duplicate
-                    continue
+            for status, target_base in file_results:
+                if status in ["OK", "PENDING"]:
+                    # Check for duplicates
+                    if target_base in seen_targets:
+                        original_file = seen_targets[target_base]
+                        duplicate_targets.append((filename, target_base, original_file))
+                        # Do not count as complete or pending if duplicate
+                        continue
+                    
+                    seen_targets[target_base] = filename
+
+                    if status == "OK":
+                        complete += 1
+                    elif status == "PENDING":
+                        pending_generation.append((filename, target_base))
                 
-                seen_targets[target_base] = filename
-
-                if status == "OK":
-                    complete += 1
-                elif status == "PENDING":
-                    pending_generation.append((filename, target_base))
-            
-            elif status == "MISSING_TARGET":
-                missing_targets.append(filename)
-            elif status == "MISSING_BLOCK":
-                missing_blocks.append(filename)
+                elif status == "MISSING_TARGET":
+                    missing_targets.append(filename)
+                elif status == "MISSING_BLOCK":
+                    missing_blocks.append(filename)
 
     # Report
     if duplicate_targets:
