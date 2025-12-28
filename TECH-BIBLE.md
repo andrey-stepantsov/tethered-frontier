@@ -27,6 +27,7 @@ Everything is repurposed. Nothing is sleek.
 * **The Air-Gap:** Ships do not network wirelessly to avoid corporate override codes. Updates are done via physical data cartridges ("Bricks").
 * **Hard-Suits:** Computers are shielded in lead boxes against radiation.
 * **Laser Links:** Line-of-sight communication. Secure, but requires precise alignment.
+* **AI ("The Golems"):** True AI is banned (power drain + security risk). Belters use "Expert Systems"—dumb, specialized scripts. If it talks back, it gets wiped.
 
 ## SECTION V: WEAPONS ("Tool-Grade")
 * **Riveters:** Modified industrial bolt-drivers. Short range, armor-piercing.
@@ -67,3 +68,11 @@ Everything is repurposed. Nothing is sleek.
     * *Form Factor:* A solid-state drive encased in a 2kg block of lead and shock-absorbing rubber.
     * *Interface:* Chunky, gold-plated physical pins. No wireless capability.
     * *Durability:* Designed to survive a ship explosion or atmospheric reentry. Used to physically courier data between ships.
+* **Computer Cores ("The Oil Bath"):**
+    * *Cooling:* Motherboards submerged in transparent tanks of mineral oil. No fans (moving parts fail).
+    * *Hardware:* "Frankenstein Clusters"—dozens of mismatched CPUs wired together to do the work of one modern chip.
+    * *Visual:* Bubbles rising slowly through amber liquid, illuminated by status LEDs.
+* **Comms Arrays ("The Squealer"):**
+    * *Method:* High-compression burst transmission.
+    * *Hardware:* A directional antenna that physically unfolds like a flower to transmit, then retracts to armor itself.
+    * *Encryption:* One-time pads generated from background radiation noise.
