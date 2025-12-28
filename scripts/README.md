@@ -52,8 +52,11 @@ Batch processor that scans existing content for defined prompts that lack corres
 
 * **Usage:**
   ```bash
-  python3 scripts/generate_missing_visuals.py
+  python3 scripts/generate_missing_visuals.py [options]
   ```
+* **Options:**
+  * `--auto`: Run in full auto mode (skip interactive confirmations).
+  * `--dry-run`: Simulate the process without generating images or creating directories.
 * **Logic:**
   * Scans for the `NEVER display the prompt` marker.
   * Extracts the prompt text from the HTML comment.
