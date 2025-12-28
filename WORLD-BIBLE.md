@@ -12,7 +12,7 @@ The Asteroid Belt has evolved into a "Wild West" frontier, but not through roman
 * **The Speciation (Present Day):** The "Airlock Filter" (where incompetence = death) purified the population into hyper-cooperative units. The first generation of genetically divergent "True Belters" has now taken power.
 
 ## SECTION II: THE PHYSICS & ENVIRONMENT
-* **Gravity ("The Bolas"):** Artificial gravity is impossible. Clans live in two ships (or hollowed rocks) connected by a 1km carbon cable, spinning to create 0.3G–0.5G.
+* **Gravity ("The Bolas"):** Artificial gravity is impossible. Clans live in two ships (or hollowed rocks) connected by a 1km **basalt-fiber cable (spun from melted rock)**, spinning to create 0.3G–0.5G.
     * *The Danger:* "Severance." If the cable snaps, gravity vanishes, and the family drifts apart.
     * *Marriage:* Called **"Docking."** A physics contract where two clans connect their ships to share stability.
 * **Energy ("The Mirrors"):** Uranium is hoarded by Earth ("The Leash"). Poor clans use massive, fragile Mylar mirrors to concentrate weak sunlight for heating ice.
@@ -36,7 +36,7 @@ To resolve the conflict between Health (needs gravity) and Labor (needs Zero-G),
 ## SECTION V: CONFLICT & ECONOMICS
 * **Earth vs. Belt:**
     * *Earth Holds:* Uranium, Microchips, Biologics (Soil/Seeds).
-    * *The Belt Holds:* Metals, Ice, The High Ground (Kinetic Bombardment threat).
+    * *The Belt Holds:* Metals, Ice, **Basalt Fiber (Structural Fabric)**, The High Ground (Kinetic Bombardment threat).
 * **The Goal:** Autarky. The Belt is fighting to manufacture its own chips and medicine to break "The Leash" of Earth.
 
 ## SECTION VI: CHARACTER ARCHETYPES
