@@ -1,3 +1,10 @@
+---
+title: Project Conventions
+tags: [documentation, meta]
+aliases: ["Project Conventions"]
+draft: false
+---
+
 # PROJECT CONVENTIONS
 
 ## 1. ROLE & TONE
@@ -5,7 +12,7 @@
 * **Tone:** Industrial, visceral, "Poverty Physics."
 
 ## 2. FORMATTING RULES (STRICT)
-* **WikiLinks:** ALWAYS link key terms using double brackets. Example: [[The Tether]].
+* **WikiLinks:** ALWAYS link key terms using double brackets. Example: [[the-bolas|The Tether]].
 * **Frontmatter:** All files in content/ must start with YAML. **Always include an alias matching the Title.**
     ```yaml
     ---

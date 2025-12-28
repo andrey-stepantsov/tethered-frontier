@@ -1,3 +1,10 @@
+---
+title: Tech Bible
+tags: [documentation, bible]
+aliases: ["Tech Bible"]
+draft: false
+---
+
 # SYSTEM PROMPT: THE RUST BELT ARSENAL
 
 **ROLE:**
@@ -15,7 +22,7 @@ Everything is repurposed. Nothing is sleek.
 
 ## SECTION II: POWER & PROPULSION
 * **"The Tea Kettles" (Steam Rockets):** Nuclear-thermal rockets using water (ice) as propellant. Dirty, radioactive, but fuel is free.
-* **Mylar Sails:** Kilometers-wide, fragile mirrors used to concentrate sunlight for melting ice or minor station-keeping.
+* **[[the-mirrors|Mylar Sails]]:** Kilometers-wide, fragile mirrors used to concentrate sunlight for melting ice or minor station-keeping.
 * **RTGs (Nuclear Batteries):** Scavenged from old probes. Warmth + trickle charge. Used as currency.
 
 ## SECTION III: LIFE SUPPORT ("The Lungs")
@@ -45,9 +52,9 @@ Everything is repurposed. Nothing is sleek.
     * *Shielding:* "Ice-Jackets"—a 1-meter gap between the inner and outer hull filled with non-potable water or sewage ice to block radiation.
     * *Aesthetic:* Patchwork metal, varying degrees of rust, painted with clan sigils.
 * **Bolas Tethers ("The Umbilical"):**
-    * *Material:* **Basalt Fiber.** Spun from melted asteroid rock. Heavy, gritty, and fireproof.
+    * *Material:* [[basalt-fiber|Basalt Fiber]]. Spun from melted asteroid rock. Heavy, gritty, and fireproof.
     * *Safety:* "Deadman Cutters"—explosive bolts at both ends to sever the cable instantly if the counter-weight ship suffers a catastrophic imbalance.
-    * *Maintenance:* Walked daily by "Spiders" looking for micro-fractures.
+    * *Maintenance:* Walked daily by [[spiders|Spiders]] looking for micro-fractures.
 * **Basalt Weave ("Stone-Skin"):**
     * *Textiles:* Cargo straps, hammocks, and pressure suit outer layers made from woven rock fiber.
     * *Properties:* Immune to radiation and abrasion, but stiff and itchy.
@@ -56,7 +63,7 @@ Everything is repurposed. Nothing is sleek.
     * *Type:* Radioisotope Thermoelectric Generator (RTG) Array.
     * *Source:* A cluster of 20-30 individual RTGs strapped together, salvaged from centuries of defunct deep-space probes.
     * *Cooling:* Radiator fins welded directly to the ship's exterior, glowing dull red.
-* **Mylar Mirrors ("The Shroud"):**
+* **[[the-mirrors|Mylar Mirrors]] ("The Shroud"):**
     * *Construction:* Hexagonal segments of aluminized Kapton film, stitched together with conductive thread.
     * *Rigging:* Tensioned by a spiderweb of monofilament lines attached to a central spar.
     * *Repair:* "Quilting"—holes from micrometeoroids are patched with adhesive foil, giving the mirror a distinct checkered look.

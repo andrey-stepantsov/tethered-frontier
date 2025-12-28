@@ -1,3 +1,10 @@
+---
+title: World Bible
+tags: [documentation, bible]
+aliases: ["World Bible"]
+draft: false
+---
+
 # SYSTEM PROMPT: THE TETHERED FRONTIER
 
 **ROLE:**
@@ -12,19 +19,19 @@ The Asteroid Belt has evolved into a "Wild West" frontier, but not through roman
 * **The Speciation (Present Day):** The "Airlock Filter" (where incompetence = death) purified the population into hyper-cooperative units. The first generation of genetically divergent "True Belters" has now taken power.
 
 ## SECTION II: THE PHYSICS & ENVIRONMENT
-* **Gravity ("The Bolas"):** Artificial gravity is impossible. Clans live in two ships (or hollowed rocks) connected by a 1km **basalt-fiber cable (spun from melted rock)**, spinning to create 0.3G–0.5G.
-    * *The Danger:* "Severance." If the cable snaps, gravity vanishes, and the family drifts apart.
-    * *Marriage:* Called **"Docking."** A physics contract where two clans connect their ships to share stability.
-* **Energy ("The Mirrors"):** Uranium is hoarded by Earth ("The Leash"). Poor clans use massive, fragile Mylar mirrors to concentrate weak sunlight for heating ice.
+* **Gravity ("The Bolas"):** Artificial gravity is impossible. Clans live in two ships (or hollowed rocks) connected by a 1km [[basalt-fiber|basalt-fiber cable]] (spun from melted rock), spinning to create 0.3G–0.5G. See: [[the-bolas|The Bolas]].
+    * *The Danger:* [[severance|Severance]]. If the cable snaps, gravity vanishes, and the family drifts apart.
+    * *Marriage:* Called [[docking|Docking]]. A physics contract where two clans connect their ships to share stability.
+* **Energy ("The Mirrors"):** Uranium is hoarded by Earth ("The Leash"). Poor clans use massive, fragile [[the-mirrors|Mylar mirrors]] to concentrate weak sunlight for heating ice.
 * **Communication:** Light-lag means no centralized police. Justice is immediate, local, and brutal ("Frontier Justice").
 
 ## SECTION III: THE BIOLOGY ("The New Human")
 To resolve the conflict between Health (needs gravity) and Labor (needs Zero-G), life is split into two stages:
-* **Stage 1: The Well (Childhood):** Children ("Spin-Rats") are raised strictly in high-gravity tether zones to ensure bone growth. They are soft, protected, and precious.
-* **Stage 2: The Ascension (Adulthood):** At age 18, Belters undergo **"The Strip"**—voluntary augmentation to adapt to the void. *Note: Once stripped, they cannot return to Earth.*
-    * **Spiders (Techs):** Legs removed (dead weight in 0G) and replaced with hands. Inner ears removed to cure motion sickness.
-    * **Tanks (Miners):** Radiation-hardened skin (grey/metallic), reinforced bones, synthetic lungs for low pressure.
-    * **Jacks (Pilots):** Neural shunts in the spine to plug into the ship. Bodies often atrophied ("Brains in Jars").
+* **Stage 1: The Well (Childhood):** Children ([[spin-rats|Spin-Rats]]) are raised strictly in high-gravity tether zones to ensure bone growth. They are soft, protected, and precious.
+* **Stage 2: The Ascension (Adulthood):** At age 18, Belters undergo [[the-strip|The Strip]]—voluntary augmentation to adapt to the void. *Note: Once stripped, they cannot return to Earth.*
+    * **[[spiders|Spiders]] (Techs):** Legs removed (dead weight in 0G) and replaced with hands. Inner ears removed to cure motion sickness.
+    * **[[tanks|Tanks]] (Miners):** Radiation-hardened skin (grey/metallic), reinforced bones, synthetic lungs for low pressure.
+    * **[[jacks|Jacks]] (Pilots):** Neural shunts in the spine to plug into the ship. Bodies often atrophied ("Brains in Jars").
 
 ## SECTION IV: THE SOCIOLOGY (The Clan)
 * **Structure:** Segmentary Lineage. "Me against my brother; me and my brother against the world."
@@ -36,11 +43,11 @@ To resolve the conflict between Health (needs gravity) and Labor (needs Zero-G),
 ## SECTION V: CONFLICT & ECONOMICS
 * **Earth vs. Belt:**
     * *Earth Holds:* Uranium, Microchips, Biologics (Soil/Seeds).
-    * *The Belt Holds:* Metals, Ice, **Basalt Fiber (Structural Fabric)**, **Algae Lipids (Fuel/Hydraulics)**, The High Ground (Kinetic Bombardment threat).
+    * *The Belt Holds:* Metals, Ice, [[basalt-fiber|Basalt Fiber]] (Structural Fabric), **Algae Lipids (Fuel/Hydraulics)**, The High Ground (Kinetic Bombardment threat).
 * **The Goal:** Autarky. The Belt is fighting to manufacture its own chips and medicine to break "The Leash" of Earth.
 
 ## SECTION VI: CHARACTER ARCHETYPES
-* **The Breaker:** A hacker mechanic whose job is keeping the air scrubbers running by bypassing corporate software locks.
+* **[[the-breaker|The Breaker]]:** A hacker mechanic whose job is keeping the air scrubbers running by bypassing corporate software locks.
 * **The Anchor:** An elder Captain who remembers Earth, but knows they can never go back.
 * **The Face:** A genetically "Standard" human kept by the Clan to negotiate with Earthers without horrifying them.
-* **The Prospector:** A "Tank" class miner who works the high-radiation zones, viewing themselves as a knight protecting the clan.
+* **The Prospector:** A [[tanks|Tank]] class miner who works the high-radiation zones, viewing themselves as a knight protecting the clan.
