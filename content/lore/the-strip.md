@@ -44,7 +44,7 @@ The surgery is performed in Zero-G clinics, often using recycled prosthetics and
 In the Belt, an unaugmented adult is viewed with suspicion. They are called **"Dead Weight"** or **"Tourists."** To refuse The Strip is to refuse to work, and in the [[the-bolas|Bolas]], if you don't work, you don't breathe.
 
 ## Medical Schematics
-![[blueprint-spider.jpeg]]
+![[blueprint-spider.png]]
 ![[blueprint-tank.jpeg]]
 ![[blueprint-jack.jpeg]]
 ![[blueprint-still.jpeg]]

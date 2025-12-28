@@ -4,7 +4,7 @@ tags: [location]
 draft: false
 ---
 
-![[iron-lung-drone.jpeg]]
+![[iron-lung-drone.png]]
 
 # The Iron Lung
 

@@ -5,7 +5,7 @@ aliases: ["The Bolas"]
 draft: false
 ---
 
-![[bolas-drone-view.jpeg]]
+![[bolas-drone-view.png]]
 *Fig 1. Drone Telemetry. Clan Habitat Spin-up. Note tether tension.*
 
 # The Bolas: Gravity by Necessity

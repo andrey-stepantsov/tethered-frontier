@@ -5,7 +5,7 @@ aliases: ["Sarah Vance"]
 draft: false
 ---
 
-![[sarah-vance-cctv.jpeg]]
+![[sarah-vance-cctv.png]]
 *Fig 1. Bridge Security Feed [CAM-04]. Subject: VANCE-S-992.*
 
 > **IDENTITY SIGNAL: DETECTED**

@@ -5,7 +5,7 @@ aliases: ["Jax"]
 draft: false
 ---
 
-![[jax-ar.jpeg]]
+![[jax-ar.png]]
 *Fig 1. Shift Boss HUD Link. Subject: 899-AX. Note critical O2 warning.*
 
 > **IDENTITY SIGNAL: DETECTED**

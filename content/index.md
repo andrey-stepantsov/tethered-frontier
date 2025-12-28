@@ -11,7 +11,7 @@ draft: false
 
 If you are reading this, you have drifted past the Mars perimeter. You are now in the domain of **Poverty Physics**. Forget the shiny chrome of Earth's propaganda. Out here, we don't have artificial gravity or infinite energy. We have what we could salvage, what we could steal, and what we could hack.
 
-![[index-nav-chart.jpeg]]
+![[index-nav-chart.png]]
 *Fig 1. Nav-Computer Dump. The "Lawless Zones" begin at the 20-minute light-lag perimeter.*
 
 ### 1. The Geography of Isolation
