@@ -7,7 +7,8 @@ import generate_visual_stub  # Import the image generator
 CONTENT_DIR = "content"
 # Updated to save images in content/assets/images/
 ASSETS_DIR = os.path.join(CONTENT_DIR, "assets", "images")
-CATEGORIES = ["characters", "lore", "locations", "stories", "assets"]
+# Removed 'assets' from categories as it's not for markdown pages
+CATEGORIES = ["characters", "lore", "locations", "stories"]
 
 def slugify(text):
     """
@@ -17,8 +18,8 @@ def slugify(text):
     text = text.lower()
     # Remove characters that aren't alphanumerics, spaces, or hyphens
     text = re.sub(r'[^a-z0-9\s-]', '', text)
-    # Replace whitespace with a single hyphen
-    text = re.sub(r'[\s]+', '-', text)
+    # Replace whitespace or existing hyphens with a single hyphen
+    text = re.sub(r'[\s-]+', '-', text)
     # Strip leading/trailing hyphens
     return text.strip('-')
 
@@ -41,6 +42,7 @@ def construct_prompt(category, title):
         subject = f"Subject: A wide shot of a sci-fi location named '{title}'. Industrial, cramped, dirty. "
         details = "HUD overlay with sector coordinates and environmental warnings."
     else:
+        # Covers lore, stories, etc.
         subject = f"Subject: An object or scene representing '{title}'. "
         details = "Macro inspection style, flash photography look."
 
@@ -70,7 +72,8 @@ def create_page(category, title):
     image_markdown = ""
     prompt_comment = ""
     
-    if category in ["characters", "locations"]:
+    # Added 'lore' to the list of categories that prompt for visuals
+    if category in ["characters", "locations", "lore"]:
         print(f"\n[?] Generate a 'Surveillance Feed' visual for this {tag}? (y/N)")
         choice = input("> ").strip().lower()
         
@@ -80,6 +83,9 @@ def create_page(category, title):
             prompt = construct_prompt(category, title)
             
             print(f"[*] Attempting to generate visual...")
+            # Ensure assets directory exists
+            os.makedirs(os.path.dirname(image_path), exist_ok=True)
+            
             success = generate_visual_stub.generate_image(prompt, image_path)
             
             if success:
