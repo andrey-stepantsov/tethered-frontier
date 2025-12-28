@@ -25,5 +25,5 @@ Spiders are the technicians, engineers, and pilots of the Belt. They live in the
 <!--
 TARGET: spiders-medical-scan
 NEVER display the prompt text to the reader.
-Image Prompt: Medical scan, cyan monochrome, wireframe schematic of a human skeleton with legs removed and mechanical grippers attached to the pelvis. HUD overlay text: "SUBJECT: SPIDER CLASS. O2 CONSUMPTION: -30%." Digital noise and scanlines.
+Image Prompt: Medical scan, cyan monochrome, wireframe schematic of a human skeleton with lower legs completely removed and mechanical grippers attached to the knee joints. The hands look normal. HUD overlay text: "SUBJECT: SPIDER CLASS. O2 CONSUMPTION: -30%." Digital noise and scanlines.
 -->
