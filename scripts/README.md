@@ -63,11 +63,25 @@ Batch processor that scans existing content for defined prompts that lack corres
   * Identifies the target filename (checking `TARGET:` tags, then Wikilinks, then filename).
   * Generates the image if it does not exist in `content/assets/images/`.
 
+### 4. Integrate Visuals (`integrate_visuals.py`)
+Injects Wikilinks into Markdown files that have generated images but are missing the display link.
+
+* **Usage:**
+  ```bash
+  python3 scripts/integrate_visuals.py [options]
+  ```
+* **Options:**
+  * `--dry-run`: Simulate the process without modifying files.
+* **Logic:**
+  * Scans for files with the prompt marker but no `![[...]]` image link.
+  * Locates the corresponding image in `content/assets/images/`.
+  * Injects `![[filename.png]]` immediately after the YAML frontmatter.
+
 ---
 
 ## Maintenance & Auditing
 
-### 4. Check Links (`check_links.py`)
+### 5. Check Links (`check_links.py`)
 Scans all Markdown files in `content/` to ensure every Wikilink `[[Link]]` points to a valid file or anchor.
 
 * **Usage:**
@@ -79,7 +93,7 @@ Scans all Markdown files in `content/` to ensure every Wikilink `[[Link]]` point
   * Ignores files marked `draft: true`.
   * Reports broken links with file paths.
 
-### 5. Audit Visual Assets (`audit_visuals.py`)
+### 6. Audit Visual Assets (`audit_visuals.py`)
 A comprehensive check of the relationship between Markdown files and Image assets.
 
 * **Usage:**
@@ -94,7 +108,7 @@ A comprehensive check of the relationship between Markdown files and Image asset
     * **Missing Target:** Prompt block exists, but no `TARGET:` defined.
     * **Duplicate Targets:** Multiple files claiming the same image.
 
-### 6. Find Missing Visuals (`find_missing_visuals.py`)
+### 7. Find Missing Visuals (`find_missing_visuals.py`)
 A lighter scanner that specifically looks for files containing the "Prompt Marker" but lacking an actual image link.
 
 * **Usage:**
@@ -110,7 +124,7 @@ A lighter scanner that specifically looks for files containing the "Prompt Marke
 
 ## Utilities
 
-### 7. List Models (`list_models.py`)
+### 8. List Models (`list_models.py`)
 Queries the Google Gemini API to list available models. Useful for debugging API access or checking for new model versions.
 
 * **Usage:**
