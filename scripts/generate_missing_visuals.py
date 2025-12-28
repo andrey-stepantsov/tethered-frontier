@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 import generate_visual_stub
 
 # CONFIGURATION
@@ -41,8 +42,12 @@ def get_target_filename(content, filename):
     # 3. Fallback
     return filename.replace(".md", ".png")
 
-def find_and_generate():
+def find_and_generate(full_auto=False):
     print(f"[-] Scanning '{CONTENT_DIR}' for missing visuals...")
+    if full_auto:
+        print("[-] Mode: FULL AUTO (No confirmation required)")
+    else:
+        print("[-] Mode: INTERACTIVE (Use --auto to skip confirmations)")
     
     if not os.path.exists(ASSETS_DIR):
         os.makedirs(ASSETS_DIR)
@@ -91,6 +96,12 @@ def find_and_generate():
             print(f"    Target: {target_filename}")
             print(f"    Prompt: {clean_prompt[:60]}...")
             
+            if not full_auto:
+                confirm = input("    Generate this image? [y/N] ").strip().lower()
+                if confirm != 'y':
+                    print("    [Skipped]")
+                    continue
+
             success = generate_visual_stub.generate_image(clean_prompt, image_path)
             
             if success:
@@ -102,4 +113,8 @@ def find_and_generate():
     print(f"\n[-] Scan complete. Generated {generated_count} new images.")
 
 if __name__ == "__main__":
-    find_and_generate()
+    full_auto_mode = False
+    if "--auto" in sys.argv:
+        full_auto_mode = True
+    
+    find_and_generate(full_auto=full_auto_mode)
