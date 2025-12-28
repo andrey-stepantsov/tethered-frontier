@@ -58,7 +58,7 @@ NEVER display the prompt text to the reader.
 
 <!--
 TARGET: blueprint-tank
-PROMPT: Diegetic medical monitor screen, glowing green wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Tank" variant. Dense skeletal structure, subdermal mesh layer highlighted. Thickened bones, metallic skin texture indicated in wireframe. Text labels "CLASS II: TANK", "OSTE-CERAMIC LACE", "RAD-SHIELDING ACTIVE". Scanlines, screen burn-in, low fidelity.
+PROMPT: Diegetic medical monitor screen, glowing green wireframe vector graphics on a dirty cracked CRT display. Anatomy schematic of a human "Tank" variant. Dense skeletal structure, subdermal mesh layer highlighted. Thickened bones, metallic skin texture indicated in wireframe. Text labels "CLASS II: TANK", "BASALT-CERAMIC LACE", "RAD-SHIELDING ACTIVE". Scanlines, screen burn-in, low fidelity.
 
 NEVER display the prompt text to the reader.
 -->

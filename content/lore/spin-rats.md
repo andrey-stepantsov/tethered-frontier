@@ -31,5 +31,5 @@ Once a Spin-Rat undergoes The Strip, they can never return to Earth. They belong
 <!--
 TARGET: spin-rats-nursery
 NEVER display the prompt text to the reader.
-Image Prompt: Security camera feed, high angle. A group of children in oversized, dirty jumpsuits playing with a ball in a narrow, curved corridor. The floor is metal grating. Amber emergency lighting. HUD overlay: "SECTOR: HIGH-G NURSERY. COUNT: 4."
+Image Prompt: Security camera feed, high angle. A group of children in oversized, coarse basalt-weave jumpsuits playing with a ball in a narrow, curved corridor. The floor is metal grating. Amber emergency lighting. HUD overlay: "SECTOR: HIGH-G NURSERY. COUNT: 4."
 -->
