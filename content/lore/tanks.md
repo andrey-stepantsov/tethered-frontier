@@ -21,6 +21,7 @@ A **Tank** is a Belter modified for high-radiation environments, heavy labor, an
 Tanks are the miners, prospectors, and enforcers. They are physically imposing and often suffer from chronic pain due to the extensive invasive surgery required for their augmentation. In the clan structure, they are the shield; Spiders are the brain.
 
 <!--
+TARGET: tanks-security-feed
 NEVER display the prompt text to the reader.
 Image Prompt: Security camera feed, high angle, fisheye lens. A bulky humanoid figure (Tank) standing in an airlock. Skin is metallic grey, scarred. They are holding a heavy hydraulic cutter. Harsh amber industrial lighting, deep shadows. Timestamp in corner.
 -->

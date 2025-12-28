@@ -21,6 +21,7 @@ A **Spider** is a Belter who has undergone a specific variation of [[the-strip|T
 Spiders are the technicians, engineers, and pilots of the Belt. They live in the "Web"—the central axis of the spin-gravity ships where gravity is negligible. Because they cannot walk in gravity wells, they rarely leave their ships. To an Earther, they look like monsters; to a Belter, they look like efficiency.
 
 <!--
+TARGET: spiders-medical-scan
 NEVER display the prompt text to the reader.
 Image Prompt: Medical scan, cyan monochrome, wireframe schematic of a human skeleton with legs removed and mechanical grippers attached to the pelvis. HUD overlay text: "SUBJECT: SPIDER CLASS. O2 CONSUMPTION: -30%." Digital noise and scanlines.
 -->
