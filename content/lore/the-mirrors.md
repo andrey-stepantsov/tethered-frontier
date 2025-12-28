@@ -15,5 +15,8 @@ In the **Tethered Frontier**, uranium is strictly hoarded by Earth ("The Leash")
 *   **Tactics:** In conflict, targeting a clan's mirrors is considered a war crime, equivalent to poisoning a well.
 
 <!--
+TARGET: mirrors-macro
 PROMPT: Macro inspection of torn, patched Mylar foil reflecting harsh starlight. Industrial clamps, duct tape repairs, grease stains. High contrast, deep shadows.
+
+NEVER display the prompt text to the reader.
 -->

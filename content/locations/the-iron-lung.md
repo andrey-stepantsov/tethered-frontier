@@ -24,5 +24,8 @@ The interior is defined by its failing life support systems.
 *   **The Diastole:** Residential blocks and hydroponics.
 
 <!--
+TARGET: iron-lung-drone
 PROMPT: Security camera feed, fisheye lens, high angle. A cramped, claustrophobic spaceship corridor with rusted metal walls dripping with condensation. Thick steam or fog in the air. Harsh yellow industrial lighting casting long shadows. Exposed pipes and wires. A few silhouette figures in the distance. Digital overlay: "CAM 04 - DECK C", "HUMIDITY CRITICAL", timestamp. Grainy, low fidelity, scanlines, vignetting.
+
+NEVER display the prompt text to the reader.
 -->
