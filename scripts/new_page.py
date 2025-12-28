@@ -1,10 +1,11 @@
 import os
 import sys
 import re
+import generate_visual_stub  # Import the image generator
 
 # CONFIGURATION
 CONTENT_DIR = "content"
-# Allowed categories based on folder structure
+ASSETS_DIR = os.path.join(CONTENT_DIR, "assets")
 CATEGORIES = ["characters", "lore", "locations", "stories", "assets"]
 
 def slugify(text):
@@ -20,6 +21,30 @@ def slugify(text):
     # Strip leading/trailing hyphens
     return text.strip('-')
 
+def construct_prompt(category, title):
+    """
+    Constructs a prompt based on CONVENTIONS.md rules.
+    """
+    base_style = (
+        "A gritty, low-fidelity surveillance camera feed from inside a rusted industrial spaceship. "
+        "Monochromatic green night-vision aesthetic. "
+        "Heavy film grain, digital artifacts, and scanlines. "
+        "Fisheye lens distortion. "
+        "Photorealistic but damaged footage quality. "
+    )
+    
+    if category == "characters":
+        subject = f"Subject: A sci-fi character named '{title}', wearing worn industrial space gear. "
+        details = "Face partially obscured by shadows or gear. HUD overlay with ID numbers."
+    elif category == "locations":
+        subject = f"Subject: A wide shot of a sci-fi location named '{title}'. Industrial, cramped, dirty. "
+        details = "HUD overlay with sector coordinates and environmental warnings."
+    else:
+        subject = f"Subject: An object or scene representing '{title}'. "
+        details = "Macro inspection style, flash photography look."
+
+    return base_style + subject + details
+
 def create_page(category, title):
     # Basic validation
     if category not in CATEGORIES:
@@ -32,16 +57,38 @@ def create_page(category, title):
     filepath = os.path.join(CONTENT_DIR, category, filename)
 
     # 1. THE SAFETY CHECK
-    # This prevents accidental overwrites of existing work.
     if os.path.exists(filepath):
         print(f"❌ ABORT: File already exists at '{filepath}'")
         print("   To edit this file, open it manually.")
         sys.exit(1)
 
     # 2. PREPARE FRONTMATTER
-    # Heuristic: singularize tag (characters -> character)
     tag = category[:-1] if category.endswith('s') else category
     
+    # 3. IMAGE GENERATION LOGIC
+    image_markdown = ""
+    prompt_comment = ""
+    
+    if category in ["characters", "locations"]:
+        print(f"\n[?] Generate a 'Surveillance Feed' visual for this {tag}? (y/N)")
+        choice = input("> ").strip().lower()
+        
+        if choice == 'y':
+            image_filename = f"{slugify(title)}.png"
+            image_path = os.path.join(ASSETS_DIR, image_filename)
+            prompt = construct_prompt(category, title)
+            
+            print(f"[*] Attempting to generate visual...")
+            success = generate_visual_stub.generate_image(prompt, image_path)
+            
+            if success:
+                # Relative path from content/category/file.md to content/assets/image.png
+                # content/characters/file.md -> ../assets/image.png
+                image_markdown = f"![[../assets/{image_filename}]]\n\n"
+                prompt_comment = f"\n<!--\nNEVER display the prompt text to the reader.\nPROMPT: {prompt}\n-->"
+            else:
+                print("[!] Skipping image inclusion due to generation failure.")
+
     content = f"""---
 title: {title}
 tags:
@@ -52,9 +99,11 @@ draft: true
 
 # {title}
 
+{image_markdown}
+{prompt_comment}
 """
 
-    # 3. CREATE FILE
+    # 4. CREATE FILE
     try:
         # Ensure directory exists
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
@@ -78,7 +127,6 @@ if __name__ == "__main__":
         print(f"Valid Categories: {', '.join(CATEGORIES)}")
         sys.exit(1)
     
-    # argv[1] is category, argv[2] is title
     cat_arg = sys.argv[1]
     
     # Handle title if passed as multiple arguments without quotes
