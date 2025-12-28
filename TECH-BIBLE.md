@@ -37,3 +37,21 @@ Everything is repurposed. Nothing is sleek.
 * **Mag-Clamps:** Magnetic locking mechanisms implanted in palms/feet for walking on hulls.
 * **Shunts:** Direct neural interface ports at the base of the skull. Prone to infection ("Port Rot").
 * **Synth-Lungs:** Teflon-coated bellows replacing organic lungs to survive depressurization.
+
+## SECTION VII: SAMPLE DESIGNS (The "Jury-Rigged" Standard)
+* **Ship Hulls ("The Can"):**
+    * *Core:* Welded standard shipping containers (ISO-2000 standard) reinforced with external ribbing.
+    * *Shielding:* "Ice-Jackets"—a 1-meter gap between the inner and outer hull filled with non-potable water or sewage ice to block radiation.
+    * *Aesthetic:* Patchwork metal, varying degrees of rust, painted with clan sigils.
+* **Bolas Tethers ("The Umbilical"):**
+    * *Material:* Braided carbon-nanotube fibers scavenged from space elevator counterweights.
+    * *Safety:* "Deadman Cutters"—explosive bolts at both ends to sever the cable instantly if the counter-weight ship suffers a catastrophic imbalance.
+    * *Maintenance:* Walked daily by "Spiders" looking for micro-fractures.
+* **Energy Generators ("The Trash-Burner"):**
+    * *Type:* Radioisotope Thermoelectric Generator (RTG) Array.
+    * *Source:* A cluster of 20-30 individual RTGs strapped together, salvaged from centuries of defunct deep-space probes.
+    * *Cooling:* Radiator fins welded directly to the ship's exterior, glowing dull red.
+* **Mylar Mirrors ("The Shroud"):**
+    * *Construction:* Hexagonal segments of aluminized Kapton film, stitched together with conductive thread.
+    * *Rigging:* Tensioned by a spiderweb of monofilament lines attached to a central spar.
+    * *Repair:* "Quilting"—holes from micrometeoroids are patched with adhesive foil, giving the mirror a distinct checkered look.
