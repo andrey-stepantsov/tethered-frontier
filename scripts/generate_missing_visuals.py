@@ -7,6 +7,7 @@ import generate_visual_stub
 CONTENT_DIR = "content"
 ASSETS_DIR = os.path.join(CONTENT_DIR, "assets", "images")
 MARKER = "NEVER display the prompt text to the reader."
+SUPPORTED_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp"]
 
 def clean_prompt_text(raw_text):
     """
@@ -41,6 +42,26 @@ def get_target_filename(content, filename):
 
     # 3. Fallback
     return filename.replace(".md", ".png")
+
+def image_exists(filename):
+    """
+    Checks if the image exists, regardless of extension if the target
+    might have been flexible, or checks specific file if extension provided.
+    """
+    base_name, ext = os.path.splitext(filename)
+    
+    # If the target file exists exactly as named, return True
+    if os.path.exists(os.path.join(ASSETS_DIR, filename)):
+        return True
+        
+    # If the target file doesn't exist, check if a sibling with a different extension exists
+    # (e.g., target is 'image.png', but 'image.jpeg' exists)
+    for ext in SUPPORTED_EXTENSIONS:
+        candidate = base_name + ext
+        if os.path.exists(os.path.join(ASSETS_DIR, candidate)):
+            return True
+            
+    return False
 
 def find_and_generate(full_auto=False, dry_run=False):
     print(f"[-] Scanning '{CONTENT_DIR}' for missing visuals...")
@@ -93,8 +114,8 @@ def find_and_generate(full_auto=False, dry_run=False):
             target_filename = get_target_filename(content, file)
             image_path = os.path.join(ASSETS_DIR, target_filename)
             
-            # 3. Check if Asset Exists
-            if os.path.exists(image_path):
+            # 3. Check if Asset Exists (Smart Check)
+            if image_exists(target_filename):
                 continue
             
             # 4. Generate
