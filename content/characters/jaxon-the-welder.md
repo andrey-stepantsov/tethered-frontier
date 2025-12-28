@@ -3,12 +3,12 @@ title: Jaxon The Welder
 tags:
   - character
 aliases: ["Jaxon The Welder"]
-draft: true
+draft: false
 ---
 
 # Jaxon The Welder
 
-![[../assets/images/jaxon-the-welder.png]]
+![[jaxon-the-welder.png]]
 
 
 
