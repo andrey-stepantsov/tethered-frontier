@@ -15,8 +15,8 @@ draft: false
 A **Tank** is a Belter modified for high-radiation environments, heavy labor, and vacuum exposure. Unlike [[spiders|Spiders]], who are built for agility inside the ship, Tanks are built to survive outside it. They work "The Peel"—the surface of asteroids where radiation is lethal to standard humans.
 
 **Modifications:**
-1.  **Dermal Plating:** Subdermal lead-polymer mesh is woven into the skin, giving Tanks a distinct grey or metallic sheen. This provides radiation shielding and resistance to micro-meteoroid impacts.
-2.  **Ossification:** Bones are reinforced with ceramic lattices to support heavy EVA suits in high-G maneuvers.
+1.  **Dermal Plating:** Subdermal lead-algae resin composite is woven into the skin, giving Tanks a distinct grey or metallic sheen. This provides radiation shielding and resistance to micro-meteoroid impacts.
+2.  **Ossification:** Bones are reinforced with basalt-ceramic lattices to support heavy EVA suits in high-G maneuvers.
 3.  **Respiratory Bypass:** Lungs are often replaced or augmented with synthetic scrubbers that can filter low-pressure air and recycle moisture more efficiently than organic tissue.
 
 ### Social Role

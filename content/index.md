@@ -29,6 +29,7 @@ We live in the wreckage of the "Rust Recession." Every ship in this sector is a 
 | **Water (Ice)** | SCARCE | 📈 +15% |
 | **Uranium** | EMBARGOED | 🔒 EARTH ONLY |
 | **Mylar (Mirrors)** | COMMON | 📉 -5% |
+| **Algae Oil** | STABLE | ➖ FLAT |
 | **Human Labor** | SURPLUS | 📉 -40% |
 
 > **The Rule:** In the Belt, a liter of water costs more than an hour of your life.
@@ -37,7 +38,7 @@ We live in the wreckage of the "Rust Recession." Every ship in this sector is a 
 *Fig 2. Public Trading Terminal. Note the inflation on O2 scrubbers.*
 
 ### 3. The Rules of the Tether
-1.  **Gravity is a Contract:** We live in [[the-bolas|The Bolas]]. Two ships, connected by a kilometer of carbon cable, spinning in the dark. That spin is the only thing keeping your bones from dissolving.
+1.  **Gravity is a Contract:** We live in [[the-bolas|The Bolas]]. Two ships, connected by a kilometer of basalt-fiber cable, spinning in the dark. That spin is the only thing keeping your bones from dissolving.
 2.  **Flesh is Weak:** You will see things here that horrify Earthers. Our children, the **Spin-Rats**, are raised in the gravity wells. But to work the void, we undergo [[the-strip|The Strip]]. We trade legs for hands.
 3.  **Incompetence is Death:** There is no police force. There is only the **Airlock Filter**.
 

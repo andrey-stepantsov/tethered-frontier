@@ -26,7 +26,7 @@ Jax is a testament to biological pragmatism.
 *   **Atrophy:** Because he rarely enters the gravity wells of [[The Bolas]], his bone density is minimal. On Earth, he would collapse under his own weight. Here, he is an acrobat.
 
 ## The Tether Incident
-During a routine inspection of the primary carbon cable, Jax noticed a "harmonic shimmer"—the cable was singing.
+During a routine inspection of the primary basalt-fiber cable, Jax noticed a "harmonic shimmer"—the cable was singing.
 
 ### The Fracture
 He found a micro-fracture in the weave, likely caused by a micrometeoroid impact. In a rich system, they would replace the segment. In the **Used Car Economy**, they didn't have spare cable.

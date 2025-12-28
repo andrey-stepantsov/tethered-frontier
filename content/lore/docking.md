@@ -14,7 +14,7 @@ draft: false
 ### The Physics of Marriage
 In the Belt, romantic individualism is a death sentence. A single ship cannot generate spin gravity effectively without a counterweight. **Docking** is the Belter term for marriage, but it is primarily a physics contract.
 
-Two clans agree to connect their ships via a 1km carbon-nanotube tether. Once connected, they spin around a common center of mass to generate 0.3G to 0.5G. This artificial gravity allows for:
+Two clans agree to connect their ships via a 1km basalt-fiber tether. Once connected, they spin around a common center of mass to generate 0.3G to 0.5G. This artificial gravity allows for:
 *   Proper fluid drainage (sanitation).
 *   Bone density maintenance for children ([[spin-rats|Spin-Rats]]).
 *   Complex chemical processing.

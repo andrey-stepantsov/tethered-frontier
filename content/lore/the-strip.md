@@ -24,7 +24,7 @@ The surgery is performed in Zero-G clinics, often using recycled prosthetics and
 
 ### Class II: Tanks (Miners)
 *   **Role:** Radiation zone harvesting, heavy lifting.
-*   **Modification:** Subdermal lead/polymer mesh injection (turns skin grey/metallic). Bone reinforcement with ceramic lacing.
+*   **Modification:** Subdermal lead/algae-resin composite injection (turns skin grey/metallic). Bone reinforcement with ceramic lacing.
 *   **Benefit:** Can survive in hard radiation zones near Jupiter without shielding.
 *   **Side Effects:** Reduced tactile sensation. Chronic joint pain from skeletal weight.
 

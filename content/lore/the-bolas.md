@@ -15,7 +15,7 @@ draft: false
 In the Tethered Frontier, artificial gravity is a myth from Earth. Here, we rely on **The Bolas**: a crude, mechanical solution to the biological necessity of weight.
 
 ## The Mechanics
-A standard Bolas formation consists of two masses—usually two scavenged ships, or a ship and a hollowed-out asteroid—connected by a 1,000-meter High-Tensile Carbon Tether.
+A standard Bolas formation consists of two masses—usually two scavenged ships, or a ship and a hollowed-out asteroid—connected by a 1,000-meter High-Tensile Basalt-Fiber Tether.
 
 Once connected, the pair uses thrusters to initiate a spin. The centrifugal force generates pseudo-gravity.
 *   **0.3G:** The minimum for long-term survival.
