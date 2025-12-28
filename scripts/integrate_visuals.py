@@ -9,41 +9,6 @@ MARKER = "NEVER display the prompt text to the reader."
 # Only support PNG now
 SUPPORTED_EXTENSIONS = [".png"]
 
-def get_target_basename(content, filename):
-    """
-    Determines the intended base filename (without extension).
-    Priority 1: 'TARGET: filename' inside comments.
-    Priority 2: Derive from markdown filename.
-    """
-    # Check for explicit TARGET:
-    target_match = re.search(r"TARGET:\s*([\w\-\.]+)", content, re.IGNORECASE)
-    if target_match:
-        name = target_match.group(1).strip()
-        return os.path.splitext(name)[0]
-
-    # Fallback to markdown filename
-    return os.path.splitext(filename)[0]
-
-def find_existing_image(basename):
-    """
-    Checks if an image with the given basename exists in ASSETS_DIR
-    with any supported extension. Returns the full filename if found.
-    """
-    for ext in SUPPORTED_EXTENSIONS:
-        candidate = basename + ext
-        if os.path.exists(os.path.join(ASSETS_DIR, candidate)):
-            return candidate
-    return None
-
-def get_existing_link(content):
-    """
-    Returns the filename inside the first image wikilink found, or None.
-    """
-    match = re.search(r"!\[\[(.*?)(?:\|.*?)?\]\]", content)
-    if match:
-        return match.group(1)
-    return None
-
 def inject_link(filepath, image_filename):
     """
     Inserts the image link after the YAML frontmatter.
@@ -69,7 +34,6 @@ def inject_link(filepath, image_filename):
         insert_index = 0
 
     # Construct the link
-    # We add a newline before and after to ensure separation
     link_line = f"\n![[{image_filename}]]\n"
     
     lines.insert(insert_index, link_line)
@@ -77,27 +41,20 @@ def inject_link(filepath, image_filename):
     with open(filepath, "w", encoding="utf-8") as f:
         f.writelines(lines)
 
-def update_link(filepath, content, old_link_name, new_link_name):
+def update_link_in_content(content, old_tag, new_filename):
     """
-    Replaces the old link filename with the new one, preserving alt text if present.
+    Replaces the old tag with a new tag pointing to new_filename, preserving alt text.
+    Returns the updated content string.
     """
-    # Regex for the full tag: ![[old_link_name(|alt)]]
-    tag_pattern = re.compile(r"!\[\[" + re.escape(old_link_name) + r"(?:\|.*?)?\]\]")
+    if "|" in old_tag:
+        # extract alt text. old_tag ends with ]]
+        # split gives ['![[filename', 'alt]]']
+        alt = old_tag.split("|", 1)[1][:-2]
+        new_tag = f"![[{new_filename}|{alt}]]"
+    else:
+        new_tag = f"![[{new_filename}]]"
     
-    def replacer(match):
-        full_match = match.group(0)
-        if "|" in full_match:
-            # extract alt text. full_match ends with ]]
-            # split gives ['![[filename', 'alt]]']
-            alt = full_match.split("|", 1)[1][:-2]
-            return f"![[{new_link_name}|{alt}]]"
-        else:
-            return f"![[{new_link_name}]]"
-
-    new_content = tag_pattern.sub(replacer, content, count=1)
-    
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(new_content)
+    return content.replace(old_tag, new_tag)
 
 def main(dry_run=False):
     print(f"[-] Scanning '{CONTENT_DIR}' for visual integration...")
@@ -119,45 +76,87 @@ def main(dry_run=False):
             if MARKER not in content:
                 continue
 
-            basename = get_target_basename(content, file)
+            # 1. Find all targets defined in the file
+            # Matches "TARGET: some-name"
+            targets = re.findall(r"TARGET:\s*([\w\-\.]+)", content, re.IGNORECASE)
             
-            # We only care about PNGs now
-            png_filename = basename + ".png"
-            png_exists = os.path.exists(os.path.join(ASSETS_DIR, png_filename))
-
-            existing_link_name = get_existing_link(content)
-
-            if existing_link_name:
-                # Link exists. Check if it needs updating.
-                _, ext = os.path.splitext(existing_link_name)
-                if ext.lower() != ".png":
-                    if png_exists:
-                        print(f"[~] Updating extension in: {file}")
-                        print(f"    {existing_link_name} -> {png_filename}")
-                        if not dry_run:
-                            update_link(filepath, content, existing_link_name, png_filename)
-                            print("    ✅ Updated.")
-                        else:
-                            print("    [Dry Run] Would update.")
-                        linked_count += 1
-                    else:
-                        print(f"[!] Found non-PNG link '{existing_link_name}' in {file}, but '{png_filename}' does not exist.")
-                else:
-                    # It is already PNG.
-                    pass
-            else:
-                # No link exists. Inject if PNG exists.
-                if png_exists:
-                    print(f"[+] Linking visual in: {file}")
-                    print(f"    Image: {png_filename}")
+            # If no explicit targets, assume the file itself is the target (if it has a prompt marker)
+            if not targets:
+                targets = [os.path.splitext(file)[0]]
+            
+            file_modified = False
+            
+            for target_base in targets:
+                png_filename = f"{target_base}.png"
+                png_path = os.path.join(ASSETS_DIR, png_filename)
+                
+                if not os.path.exists(png_path):
+                    # If the PNG doesn't exist, we can't link it yet.
+                    # (The audit script handles reporting missing assets)
+                    continue
+                    
+                # Check for existing link to this target (any extension)
+                # We want to match ![[target_base]] or ![[target_base.jpg]] or ![[target_base.png]]
+                # But NOT ![[target_base_other]]
+                
+                # Regex explanation:
+                # !\[\[              Match opening brackets
+                # target_base        Match the specific target name
+                # (?:\.[a-zA-Z0-9]+)? Match optional extension (.jpg, .png, etc)
+                # (?:\|.*?)?         Match optional alt text (| description)
+                # \]\]               Match closing brackets
+                
+                link_pattern = re.compile(r"!\[\[" + re.escape(target_base) + r"(?:\.[a-zA-Z0-9]+)?(?:\|.*?)?\]\]")
+                
+                match = link_pattern.search(content)
+                
+                if match:
+                    existing_tag = match.group(0)
+                    
+                    # Check if it's already the correct PNG
+                    # We check if the existing tag contains the exact png filename
+                    if f"![[{png_filename}]]" in existing_tag or f"![[{png_filename}|" in existing_tag:
+                        continue
+                    
+                    # It's a link to the target, but wrong extension (e.g. .jpeg) or missing extension
+                    print(f"[~] Updating link in {file}: {existing_tag} -> {png_filename}")
+                    
                     if not dry_run:
+                        content = update_link_in_content(content, existing_tag, png_filename)
+                        file_modified = True
+                    else:
+                        print("    [Dry Run] Would update.")
+                    
+                    linked_count += 1
+                else:
+                    # Link doesn't exist, inject it
+                    print(f"[+] Injecting link for {png_filename} in {file}")
+                    if not dry_run:
+                        # For injection, we need to write to file immediately or handle complex insertion logic.
+                        # Since we are iterating targets, let's use the helper but we need to be careful 
+                        # about 'content' variable drift if we inject multiple times.
+                        # Simplest approach: Write content so far, then call inject_link which re-reads.
+                        # BUT inject_link inserts at top.
+                        
+                        # If we have modified content (updates), save it first.
+                        if file_modified:
+                            with open(filepath, "w", encoding="utf-8") as f:
+                                f.write(content)
+                            file_modified = False # Reset flag
+                        
                         inject_link(filepath, png_filename)
-                        print("    ✅ Link injected.")
+                        
+                        # Re-read content for next iteration in this file
+                        with open(filepath, "r", encoding="utf-8") as f:
+                            content = f.read()
                     else:
                         print("    [Dry Run] Would inject link.")
                     linked_count += 1
-                else:
-                    print(f"[!] Image missing for: {file} (Expected: {png_filename})")
+
+            # Final save if modifications were made (updates only, no injections)
+            if file_modified and not dry_run:
+                with open(filepath, "w", encoding="utf-8") as f:
+                    f.write(content)
 
     print(f"\n[-] Complete. Processed {linked_count} updates/injections.")
 

@@ -20,30 +20,6 @@ def clean_prompt_text(raw_text):
     text = re.sub(r'\s+', ' ', text) # Collapse multiple spaces
     return text.strip()
 
-def get_target_filename(content, filename):
-    """
-    Determines the target image filename.
-    ALWAYS forces .png extension.
-    """
-    base_name = ""
-
-    # 1. Check for explicit TARGET:
-    target_match = re.search(r"TARGET:\s*([\w\-\.]+)", content, re.IGNORECASE)
-    if target_match:
-        raw_name = target_match.group(1).strip()
-        base_name = os.path.splitext(raw_name)[0]
-    
-    # 2. Check for existing Wikilink
-    elif (link_match := re.search(r"!\[\[(.*?)\]\]", content)):
-        raw_name = link_match.group(1).strip()
-        base_name = os.path.splitext(raw_name)[0]
-
-    # 3. Fallback to markdown filename
-    else:
-        base_name = os.path.splitext(filename)[0]
-
-    return f"{base_name}.png"
-
 def image_exists(filename):
     """
     Checks if the image exists in the assets directory.
@@ -81,54 +57,64 @@ def find_and_generate(full_auto=False, dry_run=False):
             if MARKER not in content:
                 continue
             
-            # 1. Extract the Prompt
-            # Looks for "PROMPT:" or "Image Prompt:" followed by text until the closing comment or marker
-            prompt_match = re.search(r"(?:Image\s+)?PROMPT:\s*(.*?)(?:-->|NEVER)", content, re.DOTALL | re.IGNORECASE)
+            # Regex to find blocks. 
+            # We look for TARGET: ... PROMPT: ... 
+            # If no TARGET found, we look for just PROMPT: ... and use filename.
+            # This regex iterates through ALL prompt blocks in the file.
+            block_pattern = re.compile(r"(?:TARGET:\s*(?P<target>[\w\-\.]+).*?)?PROMPT:\s*(?P<prompt>.*?)(?:-->|NEVER)", re.DOTALL | re.IGNORECASE)
             
-            if not prompt_match:
-                # Only warn if we found the marker but missed the prompt regex (rare edge case)
-                # print(f"[!] Marker found but no PROMPT section in: {file}")
-                continue
+            matches = list(block_pattern.finditer(content))
             
-            raw_prompt = prompt_match.group(1)
-            clean_prompt = clean_prompt_text(raw_prompt)
-            
-            if not clean_prompt:
-                print(f"[!] Empty prompt found in: {file}")
+            if not matches:
                 continue
 
-            # 2. Determine Target Filename (Forces .png)
-            target_filename = get_target_filename(content, file)
-            image_path = os.path.join(ASSETS_DIR, target_filename)
-            
-            # 3. Check if Asset Exists
-            if image_exists(target_filename):
-                continue
-            
-            # 4. Generate
-            print(f"\n[+] Missing visual detected for: {file}")
-            print(f"    Target: {target_filename}")
-            print(f"    Prompt: {clean_prompt[:60]}...")
-            
-            if dry_run:
-                print("    [Dry Run] Would generate image now.")
-                generated_count += 1
-                continue
-
-            if not full_auto:
-                confirm = input("    Generate this image? [y/N] ").strip().lower()
-                if confirm != 'y':
-                    print("    [Skipped]")
+            for match in matches:
+                raw_target = match.group("target")
+                raw_prompt = match.group("prompt")
+                
+                clean_prompt = clean_prompt_text(raw_prompt)
+                
+                if not clean_prompt:
                     continue
 
-            # Call the generation stub
-            success = generate_visual_stub.generate_image(clean_prompt, image_path)
-            
-            if success:
-                print(f"    ✅ Generated and saved.")
-                generated_count += 1
-            else:
-                print(f"    ❌ Generation failed.")
+                # Determine Target Filename
+                if raw_target:
+                    base_name = raw_target.strip()
+                else:
+                    # Fallback to filename if no explicit target
+                    base_name = os.path.splitext(file)[0]
+                
+                target_filename = f"{base_name}.png"
+                image_path = os.path.join(ASSETS_DIR, target_filename)
+                
+                # Check if Asset Exists
+                if image_exists(target_filename):
+                    continue
+                
+                # Generate
+                print(f"\n[+] Missing visual detected for: {file}")
+                print(f"    Target: {target_filename}")
+                print(f"    Prompt: {clean_prompt[:60]}...")
+                
+                if dry_run:
+                    print("    [Dry Run] Would generate image now.")
+                    generated_count += 1
+                    continue
+
+                if not full_auto:
+                    confirm = input("    Generate this image? [y/N] ").strip().lower()
+                    if confirm != 'y':
+                        print("    [Skipped]")
+                        continue
+
+                # Call the generation stub
+                success = generate_visual_stub.generate_image(clean_prompt, image_path)
+                
+                if success:
+                    print(f"    ✅ Generated and saved.")
+                    generated_count += 1
+                else:
+                    print(f"    ❌ Generation failed.")
 
     if dry_run:
         print(f"\n[-] Dry run complete. Would have generated {generated_count} new images.")
