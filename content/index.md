@@ -59,7 +59,7 @@ NEVER display the prompt text to the reader.
 
 <!--
 TARGET: index-public-ticker
-PROMPT: Close up macro shot of a dirty, scratched LCD screen in a public hallway. Scrolling amber text displaying commodity prices. "WATER: CRITICAL", "URANIUM: NO STOCK". The screen has dead pixels and is covered in a layer of grime. Harsh industrial lighting reflection.
+PROMPT: Close up macro shot of a dirty, scratched LCD screen in a public hallway. Scrolling amber text displaying commodity prices. "WATER: CRITICAL", "ALGAE OIL: STABLE", "URANIUM: NO STOCK". The screen has dead pixels and is covered in a layer of grime. Harsh industrial lighting reflection.
 
 NEVER display the prompt text to the reader.
 -->

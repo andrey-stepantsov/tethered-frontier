@@ -25,5 +25,5 @@ Tanks are the miners, prospectors, and enforcers. They are physically imposing a
 <!--
 TARGET: tanks-medical-scan
 NEVER display the prompt text to the reader.
-Image Prompt: Medical scan, cyan monochrome, wireframe schematic of a human (Tank) skeleton with modified joints ready to connect to exo skeleton. HUD overlay text: "SUBJECT: TANK CLASS. O2 CONSUMPTION: -15%." Digital noise and scanlines.
+Image Prompt: Medical scan, cyan monochrome, wireframe schematic of a human (Tank) skeleton with modified joints ready to connect to exo skeleton. HUD overlay text: "SUBJECT: TANK CLASS. DERMAL PLATING: LEAD-ALGAE. BONE: BASALT-CERAMIC." Digital noise and scanlines.
 -->

@@ -35,7 +35,7 @@ Because a single ship cannot generate gravity alone, "marriage" in the Belt is a
 
 <!--
 TARGET: bolas-drone-view
-PROMPT: Drone feed surveillance footage, fisheye lens, low fidelity, digital noise, monochromatic green tint. Two mismatched, heavily rusted industrial spaceships connected by a thin taut carbon tether cable, spinning in the deep black void of space. The ships are patched with scrap metal, looking like junk. Harsh single-source sunlight creates deep shadows and overexposed highlights. HUD overlays, telemetry data, timestamp "SECTOR 4 - LIVE FEED", scanlines, vignetting. Visceral, industrial sci-fi, realistic.
+PROMPT: Drone feed surveillance footage, fisheye lens, low fidelity, digital noise, monochromatic green tint. Two mismatched, heavily rusted industrial spaceships connected by a thick, braided basalt-fiber tether cable, spinning in the deep black void of space. The ships are patched with scrap metal, looking like junk. Harsh single-source sunlight creates deep shadows and overexposed highlights. HUD overlays, telemetry data, timestamp "SECTOR 4 - LIVE FEED", scanlines, vignetting. Visceral, industrial sci-fi, realistic.
 
 NEVER display the prompt text to the reader.
 -->

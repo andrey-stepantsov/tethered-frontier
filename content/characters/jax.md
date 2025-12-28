@@ -63,7 +63,7 @@ DEBT: CRITICAL
 
 O2 RESERVES: 12%
 
-Lighting: The only light comes from the glowing UI casting a faint green tint on Jax's face and the sparks from a wire he is holding.
+Lighting: The only light comes from the glowing UI casting a faint green tint on Jax's face and the sparks from a fraying basalt-fiber cable he is holding.
 
 NEVER display the prompt text to the reader.
 -->
