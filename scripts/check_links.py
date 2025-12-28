@@ -3,10 +3,6 @@ import re
 import sys
 
 # Determine the absolute path to the 'content' directory
-# Assumes structure:
-#   project_root/
-#     scripts/check_links.py
-#     content/
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 CONTENT_DIR = os.path.join(PROJECT_ROOT, 'content')
@@ -15,22 +11,20 @@ def quartz_slugify(text):
     """
     Mimics Quartz slugification logic to match [[Wiki Links]] to kebab-case filenames.
     """
-    # 1. Remove special chars that Quartz likely strips or encodes
-    # This is a simplified version. Quartz uses a more complex slugifier.
-    # We want to turn "The Mirrors?" into "the-mirrors"
-    
     # Remove invalid chars
     text = text.replace('?', '').replace('#', '').replace('%', '')
-    
     # Replace spaces with hyphens
     text = text.replace(' ', '-')
-    
     # Lowercase
     return text.lower()
 
 def is_draft(file_path):
     """
     Checks if a markdown file has 'draft: true' in its frontmatter.
+    Handles:
+      draft: true
+      draft: "true"
+      draft: 'true'
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -40,8 +34,13 @@ def is_draft(file_path):
             parts = content.split('---', 2)
             if len(parts) >= 3:
                 frontmatter = parts[1]
-                # Check for draft: true (flexible spacing, case insensitive)
-                if re.search(r'^draft:\s*true', frontmatter, re.MULTILINE | re.IGNORECASE):
+                # Regex explanation:
+                # ^draft:       Start of line, key 'draft:'
+                # \s*           Optional whitespace
+                # ["']?         Optional quote
+                # true          Literal 'true' (case insensitive via flag)
+                # ["']?         Optional quote
+                if re.search(r'^draft:\s*["\']?true["\']?', frontmatter, re.MULTILINE | re.IGNORECASE):
                     return True
     except Exception:
         pass
@@ -51,13 +50,6 @@ def build_index(root_dir):
     """
     Scans the root_dir recursively.
     Returns a set of valid link targets (lowercase).
-    Includes:
-    - filename (e.g., 'image.png', 'note.md')
-    - filename without extension (e.g., 'note')
-    - relative path (e.g., 'folder/note.md')
-    - relative path without extension (e.g., 'folder/note')
-    
-    Excludes files marked as 'draft: true'.
     """
     valid_targets = set()
     
@@ -89,6 +81,17 @@ def build_index(root_dir):
             # 4. Relative path without extension (e.g. "assets/image")
             rel_path_no_ext = os.path.splitext(rel_path_lower)[0]
             valid_targets.add(rel_path_no_ext)
+
+            # 5. Folder support (index.md)
+            # If this file is 'index.md', then the parent folder is a valid target
+            if filename_lower == 'index.md':
+                # parent folder name relative to content root
+                parent_folder = os.path.dirname(rel_path_lower)
+                if parent_folder and parent_folder != '.':
+                    valid_targets.add(parent_folder)
+                    # Also add the folder name itself (not full path) if unique?
+                    # Quartz usually resolves [[Folder]] to .../Folder/index.md
+                    valid_targets.add(os.path.basename(parent_folder))
             
     return valid_targets
 
@@ -100,7 +103,6 @@ def check_content(root_dir, valid_targets):
     """
     broken_links = []
     # Regex to capture [[Target]] or [[Target|Alias]]
-    # DOTALL allows matching across newlines if accidentally wrapped
     link_pattern = re.compile(r'\[\[(.*?)\]\]', re.DOTALL)
     
     for dirpath, _, filenames in os.walk(root_dir):
@@ -110,9 +112,9 @@ def check_content(root_dir, valid_targets):
             
             file_path = os.path.join(dirpath, f)
             
-            # Skip checking links INSIDE draft files? 
-            # Optional: currently we check links inside drafts, 
-            # but we don't allow linking TO drafts.
+            # Optional: Skip checking links INSIDE draft files
+            if is_draft(file_path):
+                continue
             
             try:
                 with open(file_path, 'r', encoding='utf-8') as file:
@@ -132,7 +134,7 @@ def check_content(root_dir, valid_targets):
                 # 3. Clean whitespace and newlines
                 target = target.strip()
                 
-                # Skip empty targets (e.g. [[#anchor]] links to self, or empty [[]])
+                # Skip empty targets
                 if not target:
                     continue
                 
@@ -158,7 +160,9 @@ def main():
         print(f"\nFound {len(broken_links)} broken links:")
         print("-" * 40)
         for file_path, target in broken_links:
-            print(f"File:   {file_path}")
+            # Make file path relative for cleaner output
+            rel_file = os.path.relpath(file_path, PROJECT_ROOT)
+            print(f"File:   {rel_file}")
             print(f"Target: [[{target}]]")
             print("-" * 40)
         sys.exit(1)
