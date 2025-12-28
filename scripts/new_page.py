@@ -5,7 +5,8 @@ import generate_visual_stub  # Import the image generator
 
 # CONFIGURATION
 CONTENT_DIR = "content"
-ASSETS_DIR = os.path.join(CONTENT_DIR, "assets")
+# Updated to save images in content/assets/images/
+ASSETS_DIR = os.path.join(CONTENT_DIR, "assets", "images")
 CATEGORIES = ["characters", "lore", "locations", "stories", "assets"]
 
 def slugify(text):
@@ -82,9 +83,9 @@ def create_page(category, title):
             success = generate_visual_stub.generate_image(prompt, image_path)
             
             if success:
-                # Relative path from content/category/file.md to content/assets/image.png
-                # content/characters/file.md -> ../assets/image.png
-                image_markdown = f"![[../assets/{image_filename}]]\n\n"
+                # Relative path from content/category/file.md to content/assets/images/image.png
+                # content/characters/file.md -> ../assets/images/image.png
+                image_markdown = f"![[../assets/images/{image_filename}]]\n\n"
                 prompt_comment = f"\n<!--\nNEVER display the prompt text to the reader.\nPROMPT: {prompt}\n-->"
             else:
                 print("[!] Skipping image inclusion due to generation failure.")

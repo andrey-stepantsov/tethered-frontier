@@ -6,7 +6,8 @@ import base64
 # --- CONFIGURATION ---
 # Updated to use the available Imagen 4 model found in your list
 MODEL_NAME = "imagen-4.0-generate-001"
-OUTPUT_FILENAME = "test_surveillance_feed.png"
+# Changed to use hyphens as requested
+OUTPUT_FILENAME = "test-surveillance-feed.png"
 
 # Adhering to CONVENTIONS.md: "Surveillance Intercept"
 STATIC_PROMPT = (
@@ -93,7 +94,8 @@ def generate_image(prompt, output_path):
 
 def main():
     # Wrapper for standalone execution
-    output_path = os.path.join("content", "assets", OUTPUT_FILENAME)
+    # Updated path to include 'images' subdirectory
+    output_path = os.path.join("content", "assets", "images", OUTPUT_FILENAME)
     print(f"[*] Generating visual with prompt:\n    \"{STATIC_PROMPT}\"")
     generate_image(STATIC_PROMPT, output_path)
 
