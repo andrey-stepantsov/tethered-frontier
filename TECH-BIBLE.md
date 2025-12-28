@@ -19,7 +19,7 @@ Everything is repurposed. Nothing is sleek.
 * **RTGs (Nuclear Batteries):** Scavenged from old probes. Warmth + trickle charge. Used as currency.
 
 ## SECTION III: LIFE SUPPORT ("The Lungs")
-* **Algae Mats:** Wall-mounted slime farms that turn CO2 into oxygen and "food" (protein paste). They smell like rotting kelp.
+* **Algae Mats:** Wall-mounted slime farms that turn CO2 into oxygen, "food" (protein paste), and **fuel (lipids)**. They smell like rotting kelp.
 * **Scrubbers:** Mechanical CO2 filters. The "heartbeat" of a ship. If the thumping stops, you wake up or die.
 * **The Still:** Urine recycling. "Yesterday's coffee is tomorrow's coffee."
 
@@ -73,9 +73,9 @@ Everything is repurposed. Nothing is sleek.
     * *Interface:* Chunky, gold-plated physical pins. No wireless capability.
     * *Durability:* Designed to survive a ship explosion or atmospheric reentry. Used to physically courier data between ships.
 * **Computer Cores ("The Oil Bath"):**
-    * *Cooling:* Motherboards submerged in transparent tanks of mineral oil. No fans (moving parts fail).
+    * *Cooling:* Motherboards submerged in tanks of **Algae Lipids** (refined plant oil). Mineral oil is too rare.
     * *Hardware:* "Frankenstein Clusters"—dozens of mismatched CPUs wired together to do the work of one modern chip.
-    * *Visual:* Bubbles rising slowly through amber liquid, illuminated by status LEDs.
+    * *Visual:* Bubbles rising slowly through **murky green-amber** liquid. The room smells faintly of rancid frying fat.
 * **Comms Arrays ("The Squealer"):**
     * *Method:* High-compression burst transmission.
     * *Hardware:* A directional antenna that physically unfolds like a flower to transmit, then retracts to armor itself.
