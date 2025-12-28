@@ -17,13 +17,17 @@
     ```
 
 ## 3. FILE MANAGEMENT
-* **General Rule:** ALWAYS use **kebab-case** (lowercase, hyphens for spaces) for all filenames.
+* **Creation Protocol:** NEVER create files manually. ALWAYS use the script to ensure safety checks and correct frontmatter.
+    * *Command:* `python3 scripts/new_page.py <category> <title>`
+    * *Example:* `python3 scripts/new_page.py characters "Captain Vance"`
+* **Naming Convention:** The script handles this, but for reference: ALWAYS use **kebab-case** (lowercase, hyphens for spaces).
     * *Bad:* `The Mirrors.md`, `Sarah_Vance.md`
     * *Good:* `the-mirrors.md`, `sarah-vance.md`
-* **Characters:** content/characters/[firstname-lastname].md
-* **Locations:** content/locations/[sector-name].md
-* **Lore:** content/lore/[concept-name].md
-* **Stories:** content/stories/[title].md
+* **Directory Structure:**
+    * **Characters:** content/characters/[firstname-lastname].md
+    * **Locations:** content/locations/[sector-name].md
+    * **Lore:** content/lore/[concept-name].md
+    * **Stories:** content/stories/[title].md
 
 ## 4. WORLD LOGIC
 * **No Gravity:** Unless spinning.
