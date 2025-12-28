@@ -50,7 +50,15 @@ This database is not a history book. It is a survival manual.
 **Welcome to the Frontier. Check your seals.**
 
 <!--
-PROMPT_NAV_CHART: Diegetic screen capture of a retro-futuristic navigational console. Vector graphics, green lines on black background. Solar system map focusing on the Asteroid Belt. Concentric rings labeled "LIGHT LAG: 10m", "LIGHT LAG: 20m". The screen is cracked and dusty. Low fidelity, CRT scanlines.
+TARGET: index-nav-chart
+PROMPT: Diegetic screen capture of a retro-futuristic navigational console. Vector graphics, green lines on black background. Solar system map focusing on the Asteroid Belt. Concentric rings labeled "LIGHT LAG: 10m", "LIGHT LAG: 20m". The screen is cracked and dusty. Low fidelity, CRT scanlines.
 
-PROMPT_TICKER: Close up macro shot of a dirty, scratched LCD screen in a public hallway. Scrolling amber text displaying commodity prices. "WATER: CRITICAL", "URANIUM: NO STOCK". The screen has dead pixels and is covered in a layer of grime. Harsh industrial lighting reflection.
+NEVER display the prompt text to the reader.
+-->
+
+<!--
+TARGET: index-public-ticker
+PROMPT: Close up macro shot of a dirty, scratched LCD screen in a public hallway. Scrolling amber text displaying commodity prices. "WATER: CRITICAL", "URANIUM: NO STOCK". The screen has dead pixels and is covered in a layer of grime. Harsh industrial lighting reflection.
+
+NEVER display the prompt text to the reader.
 -->

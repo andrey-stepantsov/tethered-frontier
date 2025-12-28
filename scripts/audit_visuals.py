@@ -3,7 +3,7 @@ import re
 
 # Configuration
 CONTENT_ROOT = "content"
-CATEGORIES = ["characters", "locations", "lore"]
+CATEGORIES = ["", "characters", "locations", "lore"]
 VALID_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
 
 # Regex to find the TARGET line inside the HTML comment
